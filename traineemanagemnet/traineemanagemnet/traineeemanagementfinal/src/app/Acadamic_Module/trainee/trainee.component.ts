@@ -82,12 +82,7 @@ export class TraineeComponent implements OnInit, AfterViewInit {
   getTrainees() {
     return this.courseRepository.getTrainees();
   }
-  // refreshTrainers() {
-  //   this.restData.getTrainers().subscribe((resp) => {
-  //     this.trainees = resp;
-  //     this.restData.data = resp;
-  //   });
-  // }
+
 
   addTrainee() {
   const dialogRef = this.dialog.open(TraineeFormComponent);
@@ -96,43 +91,7 @@ export class TraineeComponent implements OnInit, AfterViewInit {
     this.refreshTrainees();
   });
 }
-  // deleteTrainee(trainee: Trainee) {
-  //   console.log('inside delete skill :' + trainee.trainee_id);
-  //   this.courseRepository.deleteTraineeById(trainee.trainee_id).subscribe(
-  //     (success) => {
-  //       if (success) {
-  //         // Successfully deleted the trainee
-  //         Swal.fire({
-  //           icon: 'success',
-  //           title: 'Deleted Successfully',
-  //           showConfirmButton: false,
-  //           timer: 1500,
-  //         }).then(() => {
-  //           // Fetch and update the trainees again
-  //           this.restData.getTrainees().subscribe((resp) => {
-  //             this.trainees = resp;
-  //             this.dataSource.data = resp; // Update the MatTable dataSource
-  //           });
-  //         });
-  //       } else {
-  //         // Error occurred while deleting the trainee
-  //         Swal.fire({
-  //           icon: 'error',
-  //           title: 'Error',
-  //           text: 'An error occurred while deleting the trainee.',
-  //         });
-  //       }
-  //     },
-  //     (error: any) => {
-  //       console.error('Error occurred while deleting the trainee:', error);
-  //       Swal.fire({
-  //         icon: 'error',
-  //         title: 'Error',
-  //         text: 'An error occurred while deleting the trainee.',
-  //       });
-  //     }
-  //   );
-  // }
+
 
   deleteTrainee(trainee: Trainee) {
     if (typeof trainee.trainee_id === 'number') {
@@ -177,24 +136,6 @@ export class TraineeComponent implements OnInit, AfterViewInit {
   });
 }
 
-  // filterTraineeByBatch() {
-  //   let trainerIds = this.courseRepository
-  //     .getBatches()
-  //     .filter((batch) =>
-  //       batch.batch_name.includes(this.selectedBatch)
-  //     )[0]?.trainees_ids;
-  //   console.log(trainerIds);
-  //   this.trainees = this.courseRepository.getTrainees().filter((trainee) => {
-  //     return trainerIds.indexOf(trainee.trainee_id) != -1;
-  //     console.log(trainee.trainee_id + ':' + trainerIds);
-  //   });
-  //   this.dataSource = new MatTableDataSource(this.trainees);
-  //   console.log(this.trainees);
-  // }
-
-  // getBatches() {
-  //   return this.courseRepository.getBatches();
-  // }
 
 
   filterTraineeByBatch() {
