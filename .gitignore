@@ -1,0 +1,27 @@
+
+# Python virtual environment
+Trainee_env/
+venv/
+.venv/
+
+# Python generated files
+__pycache__/
+*.py[cod]
+*.log
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Angular dependencies and build output
+**/node_modules/
+**/dist/
+**/coverage/
+**/.angular/
+
+# IDE and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
