@@ -1,0 +1,191 @@
+<div class="trainer-page">
+
+  <h2 class="trainer-title">Trainers</h2>
+
+  <!-- Top Controls -->
+  <div class="trainer-controls">
+
+    <!-- Subject Filter -->
+    <mat-form-field
+      class="subject-field"
+      appearance="outline"
+    >
+
+      <mat-label>Select Subject</mat-label>
+
+      <mat-select
+        [(value)]="selectedSubject"
+        (valueChange)="filterTrainersBySubject()"
+      >
+
+        <mat-option
+          *ngFor="let subject of subjects"
+          [value]="subject.subject_name"
+        >
+          {{ subject.subject_name }}
+        </mat-option>
+
+      </mat-select>
+
+      <button
+        *ngIf="selectedSubject"
+        type="button"
+        mat-icon-button
+        matSuffix
+        class="subject-reset-button"
+        (mousedown)="$event.preventDefault(); $event.stopPropagation()"
+        (click)="resetSubjectFilter($event)"
+        aria-label="Reset subject filter"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+
+    </mat-form-field>
+
+
+    <!-- Add Trainer -->
+    <button
+      type="button"
+      class="add-trainer-button"
+      (click)="addTrainer()"
+    >
+      Add Trainer
+    </button>
+
+
+    <!-- Search -->
+    <mat-form-field
+      class="search-field"
+      appearance="outline"
+    >
+
+      <mat-label>Search</mat-label>
+
+      <input
+        matInput
+        (keyup)="applyFilter($event)"
+        placeholder="Search Here"
+        #input
+      />
+
+    </mat-form-field>
+
+  </div>
+
+
+  <!-- Trainer Table -->
+  <div class="trainer-table-container">
+
+    <table class="trainer-table">
+
+      <thead>
+        <tr>
+
+          <th>ID</th>
+
+          <th>Name</th>
+
+          <th>Age</th>
+
+          <th>Gender</th>
+
+          <th>Phone Number</th>
+
+          <th>Email</th>
+
+          <th>Address</th>
+
+          <th>Action</th>
+
+        </tr>
+      </thead>
+
+
+      <tbody>
+
+        <tr
+          *ngFor="let row of dataSource.filteredData; let i = index"
+        >
+
+          <td>
+            {{ i + 1 }}
+          </td>
+
+          <td>
+            {{ row.trainer_name }}
+          </td>
+
+          <td>
+            {{ row.trainer_age }}
+          </td>
+
+          <td>
+            {{ row.trainer_gender }}
+          </td>
+
+          <td>
+            {{ row.trainer_phonenumber }}
+          </td>
+
+          <td>
+            {{ $any(row).trainer_email }}
+          </td>
+
+          <td>
+            {{ $any(row).address?.city }}
+          </td>
+
+          <td class="action-cell">
+
+            <button
+              type="button"
+              class="edit-button"
+              (click)="editTrainer(row)"
+              aria-label="Edit trainer"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+
+            <button
+              type="button"
+              class="delete-button"
+              (click)="deleteTrainer(row)"
+              aria-label="Delete trainer"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+
+          </td>
+
+        </tr>
+
+
+        <!-- No Data -->
+        <tr *ngIf="dataSource.filteredData.length === 0">
+
+          <td
+            colspan="8"
+            class="no-data"
+          >
+            No data matching the filter "{{ input.value }}"
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+
+    <!-- Paginator -->
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      aria-label="Select page of trainers"
+    >
+    </mat-paginator>
+
+  </div>
+
+</div>
+
+<app-sidenav></app-sidenav>

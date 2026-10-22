@@ -1,0 +1,256 @@
+:host {
+  display: block;
+
+  min-height: 100vh;
+
+  background: #dff4f5 !important;
+
+  box-sizing: border-box;
+
+  padding-top: 1px;
+}
+
+
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
+
+.mat-card {
+  width: 430px;
+
+  min-height: 230px;
+
+  /*
+     Center the card
+  */
+  margin: 1.5rem auto 0 auto;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  /*
+     Very light card
+  */
+  background: #eefbfd !important;
+
+  border: 1px solid rgba(0, 143, 196, 0.18);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 12px 28px rgba(31, 78, 121, 0.12);
+
+  overflow: hidden;
+}
+
+.mat-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.mat-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 143, 196, 0.30);
+  box-shadow:
+    0 18px 35px rgba(31, 78, 121, 0.16),
+    0 5px 12px rgba(0, 188, 212, 0.10);
+}
+
+
+/* =========================================================
+   ANGULAR MATERIAL CARD
+   ========================================================= */
+
+:host ::ng-deep .mat-card.mat-mdc-card,
+:host ::ng-deep .mat-card.mat-card {
+  background: #eefbfd !important;
+
+  color: #17324d !important;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.mat-card mat-card-content,
+.mat-card .mat-mdc-card-content {
+  width: 100%;
+
+  padding: 28px 35px !important;
+
+  margin: 0;
+
+  background: transparent !important;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.mat-form {
+  width: 100%;
+
+  margin: 0;
+
+  padding: 0;
+
+  background: transparent !important;
+}
+
+
+/* =========================================================
+   INPUT FIELD
+   ========================================================= */
+
+.mat-form mat-form-field {
+  width: 100%;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.mat-form input {
+  color: #17324d;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   BUTTON ROW
+   ========================================================= */
+
+.button-row {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 14px;
+
+  width: 100%;
+
+  margin-top: 30px;
+
+  background: transparent !important;
+}
+
+
+/* =========================================================
+   ALL BUTTONS
+   ========================================================= */
+
+.button-row button {
+  min-width: 105px;
+
+  height: 40px;
+
+  padding: 0 22px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2px;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   SUBMIT
+   ========================================================= */
+
+.button-row button[color="primary"] {
+  color: #ffffff !important;
+
+  background: linear-gradient(
+    135deg,
+    #008fc4,
+    #00b8a9
+  ) !important;
+
+  box-shadow:
+    0 5px 12px rgba(0, 150, 199, 0.20);
+}
+
+
+.button-row button[color="primary"]:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(0, 150, 199, 0.28);
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+#backButton {
+  margin: 0 !important;
+
+  color: #ffffff !important;
+
+  background: #607d8b !important;
+
+  border: none;
+
+  box-shadow:
+    0 4px 10px rgba(69, 90, 100, 0.16);
+}
+
+
+#backButton:hover {
+  background: #455a64 !important;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 15px rgba(69, 90, 100, 0.22);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .mat-card {
+    width: calc(100% - 30px);
+
+    margin: 6rem auto 0 auto;
+  }
+
+  .button-row {
+    flex-wrap: wrap;
+  }
+
+}
+.location-title {
+  text-align: center;
+  margin: 0 0 25px 0;
+  color: #123A56;
+  font-size: 22px;
+  font-weight: 600;
+}

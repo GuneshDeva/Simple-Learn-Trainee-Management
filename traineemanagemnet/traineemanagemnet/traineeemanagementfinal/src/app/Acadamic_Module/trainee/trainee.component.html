@@ -1,0 +1,170 @@
+<div class="trainee-page">
+
+  <h2 class="trainee-title">Trainees</h2>
+
+  <div class="trainee-controls">
+
+    <mat-form-field
+      class="batch-field"
+      appearance="outline"
+    >
+      <mat-label>Select Batch</mat-label>
+
+      <mat-select
+        [(value)]="selectedBatch"
+        (valueChange)="filterTraineeByBatch()"
+      >
+        <mat-option
+          *ngFor="let batch of getBatches()"
+          [value]="batch.batch_name"
+        >
+          {{ batch.batch_name }}
+        </mat-option>
+      </mat-select>
+
+      <!-- Reset Batch Filter -->
+      <button
+        *ngIf="selectedBatch"
+        type="button"
+        mat-icon-button
+        matSuffix
+        class="batch-reset-button"
+        (mousedown)="$event.preventDefault(); $event.stopPropagation()"
+        (click)="resetBatchFilter($event)"
+        aria-label="Reset batch filter"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+
+    </mat-form-field>
+
+
+    <button
+      type="button"
+      class="add-trainee-button"
+      (click)="addTrainee()"
+    >
+      Add Trainee
+    </button>
+
+
+    <mat-form-field
+      class="search-field"
+      appearance="outline"
+    >
+      <mat-label>Search</mat-label>
+
+      <input
+        matInput
+        (keyup)="applyFilter($event)"
+        placeholder="Search Here"
+        #input
+      />
+    </mat-form-field>
+
+  </div>
+
+
+  <div class="trainee-table-container">
+
+    <table class="trainee-table">
+
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+
+      <tbody>
+
+        <tr
+          *ngFor="let row of dataSource.filteredData; let i = index"
+        >
+
+          <td>
+            {{ i + 1 }}
+          </td>
+
+          <td>
+            {{ row.trainee_name }}
+          </td>
+
+          <td>
+            {{ row.trainee_age }}
+          </td>
+
+          <td>
+            {{ row.trainee_gender }}
+          </td>
+
+          <td>
+            {{ row.trainee_phonenumber }}
+          </td>
+
+          <td>
+            {{ row.trainee_email }}
+          </td>
+
+          <td>
+            {{ row.address_id.city }}
+          </td>
+
+          <td class="action-cell">
+
+            <button
+              type="button"
+              class="edit-button"
+              (click)="editTrainee(row)"
+              aria-label="Edit trainee"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+
+            <button
+              type="button"
+              class="delete-button"
+              (click)="deleteTrainee(row)"
+              aria-label="Delete trainee"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+
+          </td>
+
+        </tr>
+
+
+        <tr *ngIf="dataSource.filteredData.length === 0">
+
+          <td
+            colspan="8"
+            class="no-data"
+          >
+            No data matching the filter "{{ input.value }}"
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      aria-label="Select page of trainees">
+    </mat-paginator>
+
+  </div>
+
+</div>
+
+<app-sidenav></app-sidenav>

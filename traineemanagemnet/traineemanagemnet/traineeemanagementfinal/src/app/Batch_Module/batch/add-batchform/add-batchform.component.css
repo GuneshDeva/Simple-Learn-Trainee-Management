@@ -1,0 +1,383 @@
+/* =========================================================
+   ADD BATCH PAGE
+   ========================================================= */
+
+:host {
+  display: block;
+
+  min-height: 100vh;
+
+  background: #dff4f5 !important;
+
+  box-sizing: border-box;
+
+  padding-top: 1px;
+}
+
+
+/* =========================================================
+   MAIN PAGE
+   ========================================================= */
+
+.add-batch-page {
+  min-height: 100vh;
+
+  padding-top: 1px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FORM CONTAINER
+   ========================================================= */
+
+.add-batch-form-container {
+  width: 430px;
+
+  margin: 3rem auto 0 auto;
+
+  position: relative;
+
+  left: 0;
+  top: -6rem;
+
+  padding: 28px 30px 30px;
+
+  background: #f8fcfd;
+
+  border: 1px solid rgba(0, 143, 196, 0.18);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 28px rgba(31, 78, 121, 0.14);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.add-batch-title {
+  margin: 0 0 25px 0;
+
+  text-align: center;
+
+  color: #123A56;
+
+  font-size: 22px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+   ========================================================= */
+
+.form-group {
+  width: 100%;
+
+  margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #123A56;
+
+  font-size: 14px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   INPUT + SELECT
+   ========================================================= */
+
+.form-control {
+  width: 100%;
+
+  height: 40px;
+
+  padding: 8px 12px;
+
+  border: 1px solid rgba(0, 143, 196, 0.25);
+
+  border-radius: 8px;
+
+  background: #ffffff !important;
+
+  color: #123A56;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 2px 7px rgba(31, 78, 121, 0.06);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+   ========================================================= */
+
+.form-control::placeholder {
+  color: #8a9aa8;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   INPUT / SELECT FOCUS
+   ========================================================= */
+
+.form-control:focus {
+  outline: none;
+
+  border-color: #008fc4;
+
+  box-shadow:
+    0 0 0 3px rgba(0, 143, 196, 0.12);
+}
+
+
+/* =========================================================
+   SELECT ARROW
+   ========================================================= */
+
+select.form-control {
+  cursor: pointer;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  -moz-appearance: none;
+
+  background-color: #ffffff !important;
+
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent 50%,
+      #123A56 50%
+    ),
+    linear-gradient(
+      135deg,
+      #123A56 50%,
+      transparent 50%
+    );
+
+  background-position:
+    calc(100% - 17px) 17px,
+    calc(100% - 11px) 17px;
+
+  background-size:
+    6px 6px,
+    6px 6px;
+
+  background-repeat: no-repeat;
+
+  padding-right: 40px;
+}
+
+
+select.form-control:focus {
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent 50%,
+      #009CBD 50%
+    ),
+    linear-gradient(
+      135deg,
+      #009CBD 50%,
+      transparent 50%
+    );
+
+  background-position:
+    calc(100% - 17px) 17px,
+    calc(100% - 11px) 17px;
+
+  background-size:
+    6px 6px;
+
+  background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   BUTTON ROW
+   ========================================================= */
+
+.button-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  width: 100%;
+
+  margin-top: 25px;
+}
+
+
+/* =========================================================
+   ALL BUTTONS
+   ========================================================= */
+
+.batch-button {
+  width: 50%;
+
+  height: 40px;
+
+  border: none;
+
+  border-radius: 20px;
+
+  color: #ffffff !important;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.back-button {
+  background: #607d8b !important;
+
+  box-shadow:
+    0 5px 12px rgba(69, 90, 100, 0.18);
+}
+
+
+.back-button:hover {
+  background: #546e7a !important;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 16px rgba(69, 90, 100, 0.25);
+}
+
+
+/* =========================================================
+   ADD BATCH BUTTON
+   ========================================================= */
+
+.add-button {
+  background: linear-gradient(
+    135deg,
+    #008fc4,
+    #00b8a9
+  ) !important;
+
+  box-shadow:
+    0 5px 12px rgba(0, 150, 199, 0.22);
+}
+
+
+.add-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(0, 150, 199, 0.30);
+}
+
+
+/* =========================================================
+   DISABLED ADD BUTTON
+   ========================================================= */
+
+.add-button:disabled {
+  background: #9bb5bf !important;
+
+  color: #ffffff !important;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .add-batch-form-container {
+    margin-left: 25rem;
+  }
+
+}
+
+
+@media (max-width: 900px) {
+
+  .add-batch-form-container {
+    margin-left: 10rem;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .add-batch-form-container {
+    width: calc(100% - 2rem);
+
+    margin-left: 1rem;
+
+    left: 0;
+
+    top: 0;
+  }
+
+  .button-row {
+    flex-direction: column;
+  }
+
+  .batch-button {
+    width: 100%;
+  }
+
+}

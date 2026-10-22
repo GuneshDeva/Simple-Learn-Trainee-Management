@@ -1,0 +1,130 @@
+
+<div class="update-course-page">
+
+  <h2 class="update-course-title">Update Course</h2>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <!-- Course Name -->
+    <div class="form-group">
+
+      <label for="course_name" class="form-label">
+        Course Name
+      </label>
+
+      <input
+        id="course_name"
+        formControlName="course_name"
+        type="text"
+        name="course_name"
+        class="form-control"
+        required
+      >
+
+      <div
+        class="validation-error"
+        *ngIf="form.get('course_name')?.touched && form.get('course_name')?.invalid"
+      >
+        <span *ngIf="form.get('course_name')?.hasError('required')">
+          Course Name is required.
+        </span>
+
+        <span *ngIf="form.get('course_name')?.hasError('pattern')">
+          Please enter a valid course name.
+        </span>
+      </div>
+
+    </div>
+
+
+    <!-- Course Fee -->
+    <div class="form-group">
+
+      <label for="course_fee" class="form-label">
+        Course Fee
+      </label>
+
+      <input
+        id="course_fee"
+        formControlName="course_fee"
+        type="text"
+        name="course_fee"
+        class="form-control"
+        required
+      >
+
+      <div
+        class="validation-error"
+        *ngIf="form.get('course_fee')?.touched && form.get('course_fee')?.invalid"
+      >
+        <span *ngIf="form.get('course_fee')?.hasError('required')">
+          Course Fee is required.
+        </span>
+
+        <span *ngIf="form.get('course_fee')?.hasError('pattern')">
+          Please enter numbers only for Course Fee.
+        </span>
+      </div>
+
+    </div>
+
+
+    <!-- Course Duration -->
+    <div class="form-group">
+
+      <label for="course_duration" class="form-label">
+        Course Duration
+      </label>
+
+      <input
+        id="course_duration"
+        formControlName="course_duration"
+        type="text"
+        name="course_duration"
+        class="form-control"
+        placeholder="Example: 6 Months"
+        required
+      >
+
+      <div
+        class="validation-error"
+        *ngIf="form.get('course_duration')?.touched && form.get('course_duration')?.invalid"
+      >
+        <span *ngIf="form.get('course_duration')?.hasError('required')">
+          Course Duration is required.
+        </span>
+
+        <span *ngIf="form.get('course_duration')?.hasError('pattern')">
+          Enter duration like 6 Months, 1 Year, or 8 Weeks.
+        </span>
+      </div>
+
+    </div>
+
+
+    <!-- Submit -->
+    <div class="button-row">
+
+  <button
+    class="back-button"
+    type="button"
+    (click)="goBack()"
+  >
+    Back
+  </button>
+
+  <button
+    class="update-button"
+    type="submit"
+    [disabled]="form.invalid"
+  >
+    Update Course
+  </button>
+
+</div>
+
+  </form>
+
+</div>
+
+<app-sidenav></app-sidenav>

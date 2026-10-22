@@ -1,0 +1,141 @@
+.batch-page {
+  min-height: 100vh;
+  padding-top: 1px;
+  position: relative;
+  z-index: 0;
+}
+
+.batch-title {
+  text-align: center;
+  color: #123A56;
+  font-size: 22px;
+  font-weight: 600;
+  position: relative;
+  top: -4rem;
+  left: 3.5rem;
+  margin: 0 0 10px 0;
+}
+
+.batch-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  top: -7rem;
+  left: -16rem;
+  margin-bottom: -4rem;
+  z-index: 10;
+}
+
+.batch-action-button {
+  min-width: 125px;
+  height: 40px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 20px;
+  background: #123A56;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(18, 58, 86, 0.20);
+}
+
+.batch-action-button:hover {
+  background: #164B6D;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.batch-table-container {
+  position: relative;
+  z-index: 1;
+}
+
+.batch-table {
+  position: relative;
+  margin: -6rem 0 0 23rem;
+  width: 60%;
+  background: #f8fcfd !important;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 150, 199, 0.15);
+  box-shadow: 0 8px 22px rgba(31, 78, 121, 0.10);
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.batch-table thead,
+.batch-table thead th {
+  background: #123A56 !important;
+  color: #ffffff !important;
+}
+
+.batch-table thead th {
+  padding: 13px 15px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  vertical-align: middle;
+  border: none !important;
+  white-space: nowrap;
+}
+
+.batch-table tbody,
+.batch-table tbody td {
+  background: #eefbfd !important;
+  color: #5f7182 !important;
+}
+
+.batch-table tbody td {
+  border-top: 1px solid rgba(0, 150, 199, 0.08) !important;
+  text-align: center;
+  vertical-align: middle;
+  padding: 12px 15px;
+}
+
+.batch-table tbody tr:nth-child(even) td {
+  background: #e3f6f8 !important;
+}
+
+.batch-table tbody tr:hover td {
+  background: #d3eef2 !important;
+}
+
+.edit-button {
+  min-width: 70px;
+  height: 34px;
+  padding: 0 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff !important;
+  color: #ffffff !important;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.delete-button {
+  min-width: 70px;
+  height: 34px;
+  padding: 0 15px;
+  margin-left: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #dc3545 !important;
+  color: #ffffff !important;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
+:host {
+  position: relative;
+  z-index: 0;
+}
+
+:host ::ng-deep app-sidenav {
+  position: relative;
+  z-index: 1000;
+}

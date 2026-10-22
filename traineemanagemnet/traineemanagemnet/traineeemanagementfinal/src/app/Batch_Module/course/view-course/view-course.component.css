@@ -1,0 +1,471 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #dff4f5 !important;
+  box-sizing: border-box;
+}
+
+
+/* Page */
+
+.view-course-page {
+  min-height: 100vh;
+  padding-top: 1px;
+}
+
+
+/* Page title */
+
+.view-course-title {
+  text-align: center;
+  color: #123A56;
+  font-size: 22px;
+  font-weight: 600;
+
+  position: relative;
+  top: -4rem;
+  left:3.5rem;
+
+  margin: 0 0 10px 0;
+}
+
+
+/* Back button */
+
+.view-course-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  position: relative;
+  top: -7rem;
+  left: -16rem;
+
+  margin-bottom: -4rem;
+}
+
+
+.back-button {
+  min-width: 90px;
+  height: 38px;
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 20px;
+
+  background: #6c757d;
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease,
+              background 0.2s ease;
+}
+
+.back-button:hover {
+  background: #5a6268;
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Course table */
+
+.table {
+  position: relative;
+
+  margin: -6rem 0 0 23rem;
+
+  width: 60%;
+
+  background: #f8fcfd !important;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(0, 150, 199, 0.15);
+
+  box-shadow: 0 8px 22px rgba(31, 78, 121, 0.10);
+
+  overflow: hidden;
+
+  border-collapse: separate;
+  border-spacing: 0;
+
+  z-index: 1;
+}
+
+
+/* Table header */
+
+.table thead,
+.table thead th {
+  background: #123A56 !important;
+  color: #ffffff !important;
+}
+
+.table thead th {
+  padding: 13px 15px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  text-align: center;
+  vertical-align: middle;
+
+  border: none !important;
+
+  white-space: nowrap;
+}
+
+
+/* Table body */
+
+.table tbody,
+.table tbody td {
+  background: #eefbfd !important;
+  color: #5f7182 !important;
+}
+
+.table tbody td {
+  border-top: 1px solid rgba(0, 150, 199, 0.08) !important;
+
+  text-align: center;
+  vertical-align: middle;
+
+  padding: 12px 15px;
+}
+
+
+/* Alternate rows */
+
+.table tbody tr:nth-child(even) td {
+  background: #e3f6f8 !important;
+}
+
+
+/* Hover */
+
+.table tbody tr:hover td {
+  background: #d3eef2 !important;
+}
+
+
+/* Manage Subjects button */
+
+.manage-button {
+  min-width: 125px;
+  height: 34px;
+
+  padding: 0 15px;
+
+  border: none;
+  border-radius: 4px;
+
+  background-color: #123A56 !important;
+  color: #ffffff !important;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  display: flex;
+align-items: center;
+justify-content: center;
+
+  cursor: pointer;
+
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease,
+              background 0.2s ease;
+}
+.table td:last-child {
+  text-align: center !important;
+}
+
+.manage-button {
+  margin: 0 auto;
+}
+
+.manage-button:hover {
+  background-color: #164B6D !important;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 12px rgba(18, 58, 86, 0.20);
+}
+
+
+/* =========================
+   Manage Subjects Modal
+   ========================= */
+
+.custom-modal-backdrop {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(18, 58, 86, 0.45);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1050;
+}
+
+
+.custom-modal {
+  width: 500px;
+  max-width: 90%;
+
+  background: #f8fcfd;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(0, 150, 199, 0.15);
+
+  box-shadow: 0 10px 30px rgba(31, 78, 121, 0.20);
+
+  overflow: hidden;
+}
+
+
+/* Modal header */
+
+.custom-modal-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  padding: 16px 20px;
+
+  background: #123A56;
+  border-bottom: none;
+}
+
+.custom-modal-header h5 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 550;
+}
+
+
+/* Close button */
+
+.close-button {
+  border: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 28px;
+
+  cursor: pointer;
+
+  line-height: 1;
+
+  transition: transform 0.2s ease;
+}
+
+.close-button:hover {
+  transform: scale(1.1);
+}
+
+
+/* Modal body */
+
+.custom-modal-body {
+  padding: 20px;
+
+  max-height: 400px;
+
+  overflow-y: auto;
+
+  background: #f8fcfd;
+}
+
+.custom-modal-body h6 {
+  color: #123A56;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  margin-bottom: 5px;
+}
+
+.modal-description {
+  color: #6c7d89;
+
+  font-size: 13px;
+
+  margin-bottom: 12px;
+}
+
+.custom-modal-body hr {
+  border: none;
+
+  border-top: 1px solid rgba(0, 150, 199, 0.12);
+
+  margin: 12px 0;
+}
+
+
+/* Subject checkbox row */
+
+.subject-option {
+  display: flex;
+
+  align-items: center;
+
+  padding: 10px 8px;
+
+  border-radius: 6px;
+
+  transition: background 0.2s ease;
+}
+
+.subject-option:hover {
+  background: #e3f6f8;
+}
+
+.subject-option input {
+  width: 17px;
+  height: 17px;
+
+  margin-right: 10px;
+
+  cursor: pointer;
+
+  accent-color: #009CBD;
+}
+
+.subject-option label {
+  cursor: pointer;
+
+  margin: 0;
+
+  color: #5f7182;
+
+  font-size: 14px;
+}
+
+
+/* Modal footer */
+
+.custom-modal-footer {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding: 15px 20px;
+
+  background: #eefbfd;
+
+  border-top: 1px solid rgba(0, 150, 199, 0.10);
+}
+
+
+/* Modal Cancel */
+
+.modal-cancel-button {
+  min-width: 85px;
+  height: 36px;
+
+  padding: 0 16px;
+
+  border: none;
+  border-radius: 18px;
+
+  background: #6c757d;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.modal-cancel-button:hover {
+  background: #5a6268;
+}
+
+
+/* Modal Save */
+
+.modal-save-button {
+  min-width: 110px;
+  height: 36px;
+
+  padding: 0 16px;
+
+  border: none;
+  border-radius: 18px;
+
+  background: #123A56;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.modal-save-button:hover {
+  background: #164B6D;
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+  .table {
+    margin-left: 5rem;
+    width: 80%;
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  .view-course-title {
+    top: 0;
+    margin-top: 1rem;
+  }
+
+  .view-course-actions {
+    top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .table {
+    margin: 0 20px;
+    width: calc(100% - 40px);
+  }
+
+  .custom-modal {
+    width: calc(100% - 40px);
+  }
+
+}
+
+

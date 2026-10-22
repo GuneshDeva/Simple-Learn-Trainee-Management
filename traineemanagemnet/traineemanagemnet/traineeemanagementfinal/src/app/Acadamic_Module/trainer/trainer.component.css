@@ -1,0 +1,599 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #dff4f5 !important;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.trainer-page {
+  min-height: 100vh;
+  padding-top: 1px;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.trainer-title {
+  position: absolute;
+
+  top: 7rem;
+  left: 55%;
+  transform: translateX(-50%);
+
+  margin: 0;
+
+  color: #123A56;
+  font-size: 22px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   TOP CONTROLS
+========================= */
+.trainer-controls {
+  position: absolute;
+
+  top: 6rem;
+  left: 23rem;
+
+  width: 65%;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin: 0;
+}
+
+
+/* Subject */
+
+.subject-field {
+  width: 230px;
+  margin: 0;
+}
+
+
+/* Search */
+
+.search-field {
+  width: 250px;
+  margin-left: auto;
+  margin-bottom: 0;
+}
+
+
+/* =========================
+   MATERIAL INPUTS
+========================= */
+
+:host ::ng-deep
+.mat-mdc-form-field {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+
+/* Remove large Material background */
+
+:host ::ng-deep
+.mat-mdc-text-field-wrapper {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+
+/* Compact control */
+
+:host ::ng-deep
+.mat-mdc-form-field-flex {
+  height: 40px !important;
+  min-height: 40px !important;
+
+  background: #ffffff !important;
+
+  border-radius: 8px !important;
+
+  box-sizing: border-box;
+}
+
+
+/* Subject border */
+
+:host ::ng-deep
+.subject-field
+.mat-mdc-form-field-flex {
+  border: 1px solid rgba(0, 143, 196, 0.30) !important;
+}
+
+
+/* Search border */
+
+:host ::ng-deep
+.search-field
+.mat-mdc-form-field-flex {
+  border: 1px solid #008fc4 !important;
+
+  box-shadow:
+    0 4px 12px rgba(0, 143, 196, 0.18) !important;
+}
+
+
+/* Remove Material outline */
+
+:host ::ng-deep
+.mdc-notched-outline {
+  display: none !important;
+}
+
+
+/* Select text */
+
+:host ::ng-deep
+.subject-field
+.mat-mdc-select-value {
+  color: #123A56 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+
+/* Search text */
+
+:host ::ng-deep
+.search-field
+.mat-mdc-input-element {
+  color: #123A56 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+
+/* Search placeholder */
+
+:host ::ng-deep
+.search-field
+.mat-mdc-input-element::placeholder {
+  color: #78909c !important;
+  opacity: 1 !important;
+}
+
+
+/* Labels */
+
+:host ::ng-deep
+.mdc-floating-label {
+  color: #123A56 !important;
+  font-weight: 500 !important;
+}
+
+
+/* =========================
+   RESET SUBJECT BUTTON
+========================= */
+
+.subject-reset-button {
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+
+  padding: 0 !important;
+  margin-right: 2px;
+
+  color: #008fc4 !important;
+
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+}
+
+.subject-reset-button:hover {
+  background: rgba(0, 143, 196, 0.10) !important;
+  color: #123A56 !important;
+}
+
+.subject-reset-button mat-icon {
+  width: 18px;
+  height: 18px;
+
+  font-size: 18px;
+  line-height: 18px;
+}
+
+
+/* =========================
+   ADD TRAINER
+========================= */
+
+.add-trainer-button {
+  min-width: 125px;
+  height: 40px;
+
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 20px;
+
+  background: #123A56;
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 12px rgba(18, 58, 86, 0.20);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.add-trainer-button:hover {
+  background: #164B6D;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(18, 58, 86, 0.28);
+}
+
+
+/* =========================
+   TABLE CONTAINER
+========================= */
+
+/* .trainer-table-container {
+  width: 65%;
+  margin-left: 23rem;
+  margin-top: -8.5rem;
+
+
+  background: #f8fcfd;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(0, 150, 199, 0.15);
+
+  box-shadow:
+    0 8px 22px rgba(31, 78, 121, 0.10);
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+} */
+
+.trainer-table-container {
+  position: absolute;
+
+  top: 10.5rem;
+  left: 23rem;
+
+  width: 65%;
+
+  margin: 0;
+
+  background: #f8fcfd;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(0, 150, 199, 0.15);
+
+  box-shadow:
+    0 8px 22px rgba(31, 78, 121, 0.10);
+
+  overflow: auto;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.trainer-table {
+  width: 100%;
+
+  background: #f8fcfd;
+
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+
+/* =========================
+   TABLE HEADER
+========================= */
+
+.trainer-table thead {
+  background: #123A56 !important;
+}
+
+.trainer-table thead tr {
+  background: #123A56 !important;
+}
+
+.trainer-table thead th {
+  background: #123A56 !important;
+  color: #ffffff !important;
+
+  padding: 13px 10px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  text-align: center;
+  vertical-align: middle;
+
+  border: none;
+}
+
+
+/* =========================
+   TABLE BODY
+========================= */
+
+.trainer-table tbody tr {
+  background: #eefbfd;
+
+  transition:
+    background 0.2s ease;
+}
+
+
+.trainer-table tbody td {
+  background: #eefbfd !important;
+  color: #5f7182 !important;
+
+  padding: 12px 10px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  text-align: center;
+  vertical-align: middle;
+
+  border-top:
+    1px solid rgba(0, 150, 199, 0.08);
+}
+
+
+/* Alternating rows */
+
+.trainer-table tbody tr:nth-child(even) td {
+  background: #e3f6f8 !important;
+}
+
+
+/* Hover */
+
+.trainer-table tbody tr:hover td {
+  background: #d3eef2 !important;
+
+  transition:
+    background 0.2s ease;
+}
+
+
+/* =========================
+   ACTION
+========================= */
+
+.action-cell {
+  white-space: nowrap;
+}
+
+
+/* Edit */
+
+.edit-button {
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+  margin: 0 3px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #007bff;
+  color: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.edit-button:hover {
+  background: #0069d9;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 12px rgba(0, 123, 255, 0.28);
+}
+
+
+/* Delete */
+
+.delete-button {
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+  margin: 0 3px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #dc3545;
+  color: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.delete-button:hover {
+  background: #c82333;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 12px rgba(220, 53, 69, 0.28);
+}
+
+
+/* Icons */
+
+.edit-button mat-icon,
+.delete-button mat-icon {
+  width: 18px;
+  height: 18px;
+
+  font-size: 18px;
+  line-height: 18px;
+}
+
+
+/* =========================
+   NO DATA
+========================= */
+
+.no-data {
+  padding: 25px !important;
+
+  text-align: center !important;
+
+  color: #6f8290 !important;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  background: #eefbfd !important;
+}
+
+
+/* =========================
+   PAGINATOR
+========================= */
+
+:host ::ng-deep
+.trainer-table-container
+.mat-mdc-paginator {
+  background: #f8fcfd !important;
+  color: #5f7182 !important;
+
+  border-top:
+    1px solid rgba(0, 150, 199, 0.10) !important;
+}
+
+:host ::ng-deep
+.trainer-table-container
+.mat-mdc-paginator-container {
+  min-height: 52px;
+}
+
+:host ::ng-deep
+.trainer-table-container
+.mat-mdc-paginator-page-size-label,
+:host ::ng-deep
+.trainer-table-container
+.mat-mdc-paginator-range-label {
+  color: #5f7182 !important;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+  .trainer-controls,
+  .trainer-table-container {
+    width: 85%;
+  }
+
+}
+
+
+@media (max-width: 900px) {
+
+  .trainer-controls {
+    width: 90%;
+    flex-wrap: wrap;
+  }
+
+  .trainer-table-container {
+    width: 90%;
+    overflow-x: auto;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .trainer-controls {
+    width: 95%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .subject-field,
+  .search-field {
+    width: 100%;
+  }
+
+  .search-field {
+    margin-left: 0;
+  }
+
+  .add-trainer-button {
+    width: 100%;
+  }
+
+  .trainer-table-container {
+    width: 95%;
+    overflow-x: auto;
+  }
+
+  .trainer-table {
+    min-width: 850px;
+  }
+
+}

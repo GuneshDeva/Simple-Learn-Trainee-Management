@@ -1,0 +1,662 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #dff4f5 !important;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.subjects-page {
+  min-height: 100vh;
+  padding-top: 1px;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.subjects-title {
+  text-align: center;
+  color: #123A56;
+  font-size: 22px;
+  font-weight: 600;
+  position: relative;
+  top: -4rem;
+  left: 3.5rem;
+  margin: 0 0 10px 0;
+}
+
+
+/* =========================
+   TOP BUTTONS
+========================= */
+
+.subjects-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+
+  position: relative;
+  top: -7rem;
+  left: -16rem;
+
+  margin-bottom: -4rem;
+}
+
+
+.subject-action-button {
+  min-width: 125px;
+  height: 40px;
+
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 20px;
+
+  background: #123A56;
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 12px rgba(18, 58, 86, 0.20);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.subject-action-button:hover {
+  background: #164B6D;
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(18, 58, 86, 0.28);
+}
+
+
+/* =========================
+   SUBJECT TABLE
+========================= */
+
+.subject-table-container {
+  position: relative;
+  z-index: 1;
+}
+
+
+.subject-table {
+  position: relative;
+
+  margin: -6rem 0 0 23rem;
+
+  width: 60%;
+
+  background: #f8fcfd !important;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(0, 150, 199, 0.15);
+
+  box-shadow:
+    0 8px 22px rgba(31, 78, 121, 0.10);
+
+  overflow: hidden;
+
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+
+/* =========================
+   TABLE HEADER
+========================= */
+
+.subject-table thead,
+.subject-table thead th {
+  background: #123A56 !important;
+  color: #ffffff !important;
+}
+
+
+.subject-table thead th {
+  padding: 13px 15px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  text-align: center;
+  vertical-align: middle;
+
+  border: none !important;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   TABLE BODY
+========================= */
+
+.subject-table tbody,
+.subject-table tbody td {
+  background: #eefbfd !important;
+  color: #5f7182 !important;
+}
+
+
+.subject-table tbody td {
+  border-top:
+    1px solid rgba(0, 150, 199, 0.08) !important;
+
+  text-align: center;
+  vertical-align: middle;
+
+  padding: 12px 15px;
+}
+
+
+.subject-table tbody tr:nth-child(even) td {
+  background: #e3f6f8 !important;
+}
+
+
+.subject-table tbody tr:hover td {
+  background: #d3eef2 !important;
+}
+
+
+/* =========================
+   TRAINER LIST
+========================= */
+
+.subject-table ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.subject-table li {
+  list-style: none;
+
+  margin: 2px 0;
+
+  color: #5f7182;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+
+/* =========================
+   ICON BUTTONS
+========================= */
+
+.icon-button {
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.icon-button i {
+  font-size: 16px;
+}
+
+
+/* View icon -eye */
+.view-icon {
+  color: #006B78;
+}
+
+.view-icon:hover {
+  background: rgba(0, 107, 120, 0.12);
+  color: #004F59;
+  transform: translateY(-2px);
+}
+
+
+.delete-icon {
+  color: #dc3545;
+}
+
+
+.delete-icon:hover {
+  background: rgba(220, 53, 69, 0.10);
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   TOPIC TABLE
+========================= */
+
+.topic-table {
+  width: 90% !important;
+
+  margin: 10px auto !important;
+
+  position: static !important;
+
+  border-collapse: separate;
+  border-spacing: 0;
+
+  border: 1px solid rgba(0, 150, 199, 0.15);
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  background: #f8fcfd;
+
+  box-shadow:
+    0 4px 12px rgba(31, 78, 121, 0.08);
+}
+
+
+.topic-table thead,
+.topic-table thead th {
+  background: #123A56 !important;
+  color: #ffffff !important;
+}
+
+
+.topic-table th {
+  padding: 10px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  text-align: center;
+
+  border: none !important;
+}
+
+
+.topic-table td {
+  padding: 10px;
+
+  background: #eefbfd !important;
+
+  color: #5f7182;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  text-align: center;
+
+  border-top:
+    1px solid rgba(0, 150, 199, 0.08);
+}
+
+
+.topic-table tbody tr:nth-child(even) td {
+  background: #e3f6f8 !important;
+}
+
+
+.topic-table tbody tr:hover td {
+  background: #d3eef2 !important;
+}
+
+
+/* =========================
+   MODAL BACKGROUND
+========================= */
+
+.blur-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  z-index: 9998;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(18, 58, 86, 0.45);
+  backdrop-filter: blur(4px);
+}
+
+
+/* =========================
+   FORM CONTAINER
+========================= */
+
+.subject-form-container,
+.topic-form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  z-index: 10000;
+}
+
+
+/* =========================
+   FORM CARD
+========================= */
+
+.subject-form-card {
+  width: 430px;
+
+  position: relative;
+  z-index: 10001;
+
+  background: #f8fcfd;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(0, 150, 199, 0.15);
+
+  box-shadow: 0 10px 30px rgba(31, 78, 121, 0.20);
+
+  padding: 5px;
+}
+
+
+/* =========================
+   FORM TITLE
+========================= */
+
+.form-title {
+  text-align: center;
+
+  color: #123A56;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  padding: 15px 10px 5px;
+}
+
+
+/* =========================
+   FORM CONTENT
+========================= */
+
+.form-content {
+  padding: 10px 25px 25px;
+}
+
+
+.field {
+  width: 100%;
+}
+
+
+/* =========================
+   FORM BUTTONS
+========================= */
+
+.form-buttons {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 5px;
+}
+
+
+.form-buttons button {
+  flex: 1;
+
+  height: 40px;
+
+  border: none;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* SAVE */
+
+.save-button {
+  background: #123A56;
+  color: #ffffff;
+
+  box-shadow:
+    0 5px 12px rgba(18, 58, 86, 0.20);
+}
+
+
+.save-button:hover {
+  background: #164B6D;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(18, 58, 86, 0.28);
+}
+
+
+/* CANCEL */
+
+.cancel-button {
+  background: #6c757d;
+  color: #ffffff;
+}
+
+
+.cancel-button:hover {
+  background: #5a6268;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   LOADER
+========================= */
+
+.center-body {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100vh;
+}
+
+
+.blur-backgrounds {
+  backdrop-filter: blur(2px);
+
+  background-color: rgba(0, 0, 0, 0.059);
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* =========================
+   LOADER CIRCLE
+========================= */
+
+.loader-circle-11 {
+  position: relative;
+
+  width: 60px;
+  height: 60px;
+}
+
+
+.loader-circle-11 .arc {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  border: 4px solid transparent;
+  border-top-color: #123A56;
+
+  animation: rotate1 1s linear infinite;
+}
+
+
+.loader-circle-11 .arc:nth-child(2) {
+  border-top-color: #009CBD;
+
+  animation-duration: 1.3s;
+}
+
+
+.loader-circle-11 .arc:nth-child(3) {
+  border-top-color: #00B1AD;
+
+  animation-duration: 1.6s;
+}
+
+
+@keyframes rotate1 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   ADD TOPIC MODAL
+========================= */
+
+.topic-modal {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  z-index: 10000;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(18, 58, 86, 0.45);
+
+  backdrop-filter: blur(4px);
+}
+
+
+/* =========================
+   ADD TOPIC FORM
+========================= */
+
+.topic-form-container {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  z-index: 10001;
+}
+
+
+/* =========================
+   ADD TOPIC CARD
+========================= */
+
+.topic-modal .subject-form-card {
+  position: relative;
+
+  z-index: 10002;
+
+  width: 430px;
+
+  background: #f8fcfd;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(0, 150, 199, 0.15);
+
+  box-shadow:
+    0 10px 30px rgba(31, 78, 121, 0.20);
+
+  padding: 5px;
+}
+
+
+/* =========================
+   FIX SUBJECT DROPDOWN
+========================= */
+
+::ng-deep .cdk-overlay-container {
+  z-index: 11000 !important;
+}
+
+::ng-deep .cdk-overlay-pane {
+  z-index: 11001 !important;
+}
+
+::ng-deep .mat-mdc-select-panel {
+  z-index: 11002 !important;
+}

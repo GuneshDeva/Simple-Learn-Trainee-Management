@@ -1,0 +1,125 @@
+<div class="view-course-page">
+
+  <h2 class="view-course-title">View Course</h2>
+
+  <div class="view-course-actions">
+    <button
+      type="button"
+      class="back-button"
+      (click)="goBack()">
+      Back
+    </button>
+  </div>
+
+  <table class="table">
+
+    <thead>
+      <tr>
+        <th scope="col">Course Name</th>
+        <th scope="col">Subject Name</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let course of getCourses()">
+
+        <td>
+          {{ course.course_name }}
+        </td>
+
+        <td>
+          <span *ngFor="let subject of course.subjects; let last = last">
+            {{ subject.name }}<span *ngIf="!last">, </span>
+          </span>
+        </td>
+
+        <td>
+          <button
+            type="button"
+            class="manage-button"
+            (click)="openSubjectModal(course)">
+            Manage Subjects
+          </button>
+        </td>
+
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>
+
+
+<!-- Manage Subjects Modal -->
+
+<div
+  class="custom-modal-backdrop"
+  *ngIf="showSubjectModal">
+
+  <div class="custom-modal">
+
+    <div class="custom-modal-header">
+
+      <h5>Manage Subjects</h5>
+
+
+    </div>
+
+    <div class="custom-modal-body">
+
+      <h6 *ngIf="selectedCourse">
+        {{ selectedCourse.course_name }}
+      </h6>
+
+      <p class="modal-description">
+        Select the subjects for this course
+      </p>
+
+      <hr>
+
+      <div
+        class="subject-option"
+        *ngFor="let subject of subjects">
+
+        <input
+          type="checkbox"
+          [id]="'subject-' + subject.subject_Id"
+          [checked]="isSubjectSelected(selectedCourse, subject.subject_Id)"
+          (change)="toggleSubject(selectedCourse, subject.subject_Id, $event)"
+        >
+
+        <label
+          [for]="'subject-' + subject.subject_Id">
+
+          {{ subject.subject_name }}
+
+        </label>
+
+      </div>
+
+    </div>
+
+    <div class="custom-modal-footer">
+
+      <button
+        type="button"
+        class="modal-cancel-button"
+        (click)="closeSubjectModal()">
+        Cancel
+      </button>
+
+      <button
+        type="button"
+        class="modal-save-button"
+        (click)="saveSubjects(selectedCourse!)">
+        Save Changes
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<app-sidenav></app-sidenav>

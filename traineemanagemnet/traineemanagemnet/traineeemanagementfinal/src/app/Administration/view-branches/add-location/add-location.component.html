@@ -1,0 +1,54 @@
+
+
+<mat-card class="mat-card">
+
+  <mat-card-content>
+
+    <h2 class="location-title">
+      <b>ADD LOCATION</b>
+    </h2>
+
+    <form
+      class="mat-form"
+      (ngSubmit)="addLocation()"
+      [formGroup]="Myform"
+    >
+
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          placeholder="Enter location"
+          formControlName="city"
+          required
+          (input)="onCityInputChange($event)"
+        />
+      </mat-form-field>
+
+      <div class="button-row">
+
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+        >
+          Submit
+        </button>
+
+        <button
+          class="back-button"
+          type="button"
+          routerLink="/app-view-Branches"
+          id="backButton"
+        >
+          Back
+        </button>
+
+      </div>
+
+    </form>
+
+  </mat-card-content>
+
+</mat-card>
+
+<app-Administration></app-Administration>

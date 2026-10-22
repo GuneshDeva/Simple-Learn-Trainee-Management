@@ -1,0 +1,243 @@
+/* UPDATE COURSE PAGE */
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #dff4f5 !important;
+  box-sizing: border-box;
+}
+
+
+/* PAGE TITLE */
+
+.update-course-title {
+  text-align: center;
+  color: #123A56;
+  font-size: 22px;
+  font-weight: 600;
+
+  position: relative;
+  top: -5rem;
+
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+
+/* FORM */
+
+form {
+  width: 430px;
+
+  margin: -5rem auto 0 auto;
+  padding: 28px 32px;
+
+  background: #f8fcfd;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(0, 150, 199, 0.15);
+
+  box-shadow:
+    0 8px 22px rgba(31, 78, 121, 0.10);
+
+  box-sizing: border-box;
+}
+
+
+/* FORM GROUP */
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+
+/* LABEL */
+
+.form-label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #123A56;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* INPUT */
+
+.form-control {
+  width: 100%;
+  height: 40px;
+
+  padding: 8px 12px;
+
+  border: 1px solid #c5dfe5;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #435563;
+
+  font-size: 13px;
+
+  box-sizing: border-box;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* INPUT FOCUS */
+
+.form-control:focus {
+  border-color: #009CBD;
+
+  box-shadow:
+    0 0 0 3px rgba(0, 156, 189, 0.12);
+
+  outline: none;
+}
+
+
+/* INVALID INPUT */
+
+.form-control.ng-invalid.ng-touched {
+  border-color: #dc3545 !important;
+}
+
+
+/* VALID INPUT */
+
+.form-control.ng-valid.ng-touched {
+  border-color: #198754 !important;
+}
+
+
+/* VALIDATION MESSAGE */
+
+.validation-error {
+  margin-top: 5px;
+
+  color: #dc3545;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+/* UPDATE BUTTON */
+
+.update-button {
+  width: 100%;
+  height: 40px;
+
+  margin-top: 5px;
+
+  border: none;
+  border-radius: 20px;
+
+  background: #123A56;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* BUTTON HOVER */
+
+.update-button:hover:not(:disabled) {
+  background: #164B6D;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 12px rgba(18, 58, 86, 0.20);
+}
+
+
+/* DISABLED BUTTON */
+
+.update-button:disabled {
+  background: #aabcc5;
+
+  color: #ffffff;
+
+  cursor: not-allowed;
+
+  opacity: 0.8;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 650px) {
+
+  .update-course-title {
+    margin-top: 1rem;
+  }
+
+  form {
+    width: calc(100% - 40px);
+
+    margin: 0 20px;
+
+    padding: 24px;
+  }
+}
+.button-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 5px;
+}
+
+.button-row button {
+  flex: 1;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* BACK */
+
+.back-button {
+  background: #6c757d;
+  color: #ffffff;
+}
+
+.back-button:hover {
+  background: #5a6268;
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+/* UPDATE */
+
+.button-row .update-button {
+  margin-top: 0;
+  width: auto;
+}

@@ -1,0 +1,121 @@
+<div class="add-batch-page">
+
+  <div class="add-batch-form-container">
+
+    <h2 class="add-batch-title">
+      Add Batch
+    </h2>
+
+    <form
+      [formGroup]="form"
+      (ngSubmit)="addBatches()"
+    >
+
+      <!-- Course -->
+      <div class="form-group">
+
+        <label for="course">
+          Course
+        </label>
+
+        <select
+          id="course"
+          formControlName="course"
+          class="form-control"
+          required
+        >
+
+          <option value="" disabled selected>
+            Select Course
+          </option>
+
+          <option
+            *ngFor="let course of courses"
+            [value]="course.course_id"
+          >
+            {{ course.course_name }}
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- Branch -->
+      <div class="form-group">
+
+        <label for="branch">
+          Branch
+        </label>
+
+        <select
+          id="branch"
+          formControlName="branch"
+          class="form-control"
+          required
+        >
+
+          <option value="" disabled selected>
+            Select Branch
+          </option>
+
+          <option
+            *ngFor="let branch of branches"
+            [value]="branch.branch_id"
+          >
+            {{ branch.branch_name }}
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- Batch Name -->
+      <div class="form-group">
+
+        <label for="batchName">
+          Batch Name
+        </label>
+
+        <input
+          id="batchName"
+          formControlName="batch_name"
+          type="text"
+          name="batchName"
+          class="form-control"
+          placeholder="Enter Batch Name"
+          required
+        />
+
+      </div>
+
+
+      <!-- Buttons -->
+      <div class="button-row">
+
+        <button
+          class="batch-button back-button"
+          type="button"
+          (click)="goBack()"
+        >
+          Back
+        </button>
+
+        <button
+          class="batch-button add-button"
+          [disabled]="!form.valid"
+          type="submit"
+        >
+          Add Batch
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+
+<app-sidenav></app-sidenav>

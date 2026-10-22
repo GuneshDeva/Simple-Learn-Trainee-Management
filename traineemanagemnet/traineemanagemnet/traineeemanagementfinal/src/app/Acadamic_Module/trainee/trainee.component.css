@@ -1,0 +1,314 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #dff4f5 !important;
+  box-sizing: border-box;
+}
+
+.trainee-page {
+  min-height: 100vh;
+  padding-top: 1px;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.trainee-title {
+  text-align: center;
+  color: #123A56;
+  font-size: 22px;
+  font-weight: 600;
+
+  position: relative;
+  top: -0.5rem;
+  left: 4.5rem;
+
+  margin: 0 0 10px 0;
+}
+
+
+/* =========================
+   FILTER / BUTTON / SEARCH
+========================= */
+
+/* Parent: keeps controls in one row */
+.trainee-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  position: relative;
+  top: -4.2rem;
+  left: 23.1rem;
+
+  z-index: 10;
+}
+
+/* Batch dropdown: independent position */
+.batch-field {
+  width: 230px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+/* Reset */
+
+.batch-reset-button {
+  color: #123A56 !important;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+}
+
+.batch-reset-button mat-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+.batch-reset-button:hover {
+  color: #dc3545 !important;
+}
+
+
+/* Add button */
+
+/* Add Trainee button: independent position */
+.add-trainee-button {
+  position: relative;
+  top: 0;
+  left: 0;
+
+  min-width: 125px;
+  height: 40px;
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 20px;
+
+  background: #123A56;
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(18, 58, 86, 0.20);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.add-trainee-button:hover {
+  background: #164B6D;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(18, 58, 86, 0.28);
+}
+
+/* Search bar: independent position */
+.search-field {
+  width: 252px;
+
+  position: relative;
+  top: 0;
+  left: 22rem;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.trainee-table-container {
+  position: relative;
+
+  width: 65%;
+
+  margin-left: 23rem;
+  margin-top: -4.5rem;
+
+  background: #f8fcfd;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(0, 150, 199, 0.15);
+
+  box-shadow:
+    0 8px 22px rgba(31, 78, 121, 0.10);
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+  z-index: 1;
+}
+
+
+/* Actual table */
+
+.trainee-table {
+  width: 100%;
+
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.trainee-table thead,
+.trainee-table thead th {
+  background: #123A56;
+  color: #ffffff;
+}
+
+.trainee-table thead th {
+  padding: 13px 15px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  text-align: center;
+  vertical-align: middle;
+
+  border: none;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+.trainee-table tbody,
+.trainee-table tbody td {
+  background: #eefbfd;
+  color: #5f7182;
+}
+
+.trainee-table tbody td {
+  border-top: 1px solid rgba(0, 150, 199, 0.08);
+
+  text-align: center;
+  vertical-align: middle;
+
+  padding: 12px 15px;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+
+/* Alternate rows */
+
+.trainee-table tbody tr:nth-child(even) td {
+  background: #e3f6f8;
+}
+
+
+/* Hover */
+
+.trainee-table tbody tr:hover td {
+  background: #d3eef2;
+}
+
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.action-cell {
+  white-space: nowrap;
+}
+
+
+/* Edit */
+
+.edit-button {
+  width: 36px;
+  height: 34px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #007bff;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-button mat-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+
+/* Delete */
+
+.delete-button {
+  width: 36px;
+  height: 34px;
+
+  padding: 0;
+
+  margin-left: 8px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #dc3545;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-button mat-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+
+/* =========================
+   NO DATA
+========================= */
+
+.no-data {
+  padding: 25px !important;
+
+  text-align: center !important;
+
+  color: #7b8b98 !important;
+
+  font-weight: 500;
+}
+
+
+/* =========================
+   PAGINATOR
+========================= */
+
+.trainee-table-container mat-paginator {
+  background: #f8fcfd;
+  color: #5f7182;
+}

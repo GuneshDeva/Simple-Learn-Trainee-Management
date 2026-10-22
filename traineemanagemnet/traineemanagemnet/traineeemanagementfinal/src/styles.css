@@ -1,0 +1,56 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+
+  background: #dff4f5 !important;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+
+  background: #dff4f5 !important;
+}
+
+
+/* =========================================================
+   GLOBAL APPLICATION BACKGROUND
+   ========================================================= */
+
+app-root {
+  display: block;
+
+  min-height: 100vh;
+
+  background: #dff4f5 !important;
+}
+
+
+/* =========================================================
+   COMMON COLORS
+   ========================================================= */
+
+:root {
+  --primary-color: #008fc4;
+  --secondary-color: #00b8a9;
+
+  --dark-color: #17324d;
+  --text-color: #5f7182;
+
+  /*
+     SAME BACKGROUND EVERYWHERE
+  */
+  --page-background: #dff4f5;
+
+  --card-background: #dff4f5;
+
+  --border-color: rgba(0, 150, 199, 0.12);
+}
+
+/* ---------------------------------- */
+
+.swal2-container {
+  z-index: 99999 !important;
+}
+
+

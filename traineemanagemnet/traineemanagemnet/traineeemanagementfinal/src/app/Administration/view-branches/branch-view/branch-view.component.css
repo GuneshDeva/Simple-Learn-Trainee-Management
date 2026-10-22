@@ -1,0 +1,240 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #dff4f5 !important;
+  box-sizing: border-box;
+}
+
+
+/* Search area */
+
+.form-group {
+  display: inline-block;
+  vertical-align: middle;
+  width: 280px;
+  margin-left: 25rem;
+  margin-top: 0;
+}
+
+
+/* Main table */
+.table {
+  margin-top: -4rem;
+  margin-left: 18rem;
+  width: 60%;
+
+  background: #f8fcfd !important;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(0, 150, 199, 0.15);
+
+  box-shadow: 0 8px 22px rgba(31, 78, 121, 0.10);
+
+  overflow: hidden;
+
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+
+/* Table header */
+.table thead {
+  background: #123A56 !important;
+}
+
+.table thead th {
+  padding: 13px 15px;
+  background: #123A56 !important;
+  color: #ffffff !important;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+  border: none !important;
+  white-space: nowrap;
+}
+
+/* Table body */
+.table tbody {
+  background: #eefbfd !important;
+}
+
+/* Table body cells */
+.table tbody td,
+.table tbody th {
+  background: #eefbfd !important;
+  color: #5f7182 !important;
+  border-top: 1px solid rgba(0, 150, 199, 0.08) !important;
+}
+
+/* Alternate rows */
+.table tbody tr:nth-child(even) td,
+.table tbody tr:nth-child(even) th {
+  background: #e3f6f8 !important;
+}
+
+/* Hover */
+.table tbody tr:hover td,
+.table tbody tr:hover th {
+  background: #d3eef2 !important;
+}
+
+
+/* Data cells */
+.table td {
+  padding: 12px 15px;
+
+  color: #526b7c;
+
+  font-size: 14px;
+
+  text-align: center;
+  vertical-align: middle;
+
+  border-top: 1px solid rgba(0, 150, 199, 0.08) !important;
+}
+
+
+/*
+   Keep header and data aligned.
+   Every column gets the same width.
+*/
+.table th,
+.table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+/* First column */
+.table th:nth-child(1),
+.table td:nth-child(1) {
+  width: 25%;
+}
+
+
+/* Second column */
+.table th:nth-child(2),
+.table td:nth-child(2) {
+  width: 25%;
+}
+
+
+/* Third column */
+.table th:nth-child(3),
+.table td:nth-child(3) {
+  width: 25%;
+}
+
+
+/* Fourth column */
+.table th:nth-child(4),
+.table td:nth-child(4) {
+  width: 25%;
+}
+
+
+/* Form group */
+.form-group {
+  width: 10%;
+  margin-left: 25rem;
+  margin-top: 5rem;
+}
+
+
+/* Back button container */
+
+#back {
+  display: inline-block;
+  vertical-align: middle;
+
+  width: 110px !important;
+
+  margin-left: 300px !important;
+  margin-top: -8rem !important;
+}
+
+
+/* Back button */
+
+#back .w-100 {
+  width: 110px !important;
+  min-width: 110px;
+  height: 38px;
+
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 20px;
+
+  color: #ffffff !important;
+  font-size: 13px;
+  font-weight: 600;
+
+  background: linear-gradient(
+    135deg,
+    #008fc4,
+    #00b8a9
+  ) !important;
+
+  box-shadow: 0 5px 12px rgba(0, 150, 199, 0.20);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* Back hover */
+
+#back .w-100:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 150, 199, 0.28);
+}
+
+
+/* Search input */
+
+.form-group input.form-control {
+  width: 280px;
+  height: 38px;
+
+  padding: 0 16px;
+
+  border: 1px solid rgba(0, 150, 199, 0.20);
+  border-radius: 20px;
+
+  background: #ffffff !important;
+  color: #17324d;
+
+  font-size: 13px;
+
+  box-shadow: 0 4px 10px rgba(31, 78, 121, 0.06);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.form-group input.form-control:focus {
+  outline: none;
+
+  border-color: #008fc4;
+
+  box-shadow:
+    0 0 0 3px rgba(0, 143, 196, 0.10),
+    0 5px 12px rgba(31, 78, 121, 0.08);
+}
+
+
+.form-group input.form-control::placeholder {
+  color: #8192a0;
+}
+
+
+/* Move Search only */
+div.form-group:not(#back) {
+  transform: translateY(-105px);
+}

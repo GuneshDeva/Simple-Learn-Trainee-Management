@@ -1,0 +1,194 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #dff4f5 !important;
+  box-sizing: border-box;
+}
+
+/* Main page */
+.update-batch-page {
+  min-height: 100vh;
+  padding-top: 1px;
+}
+
+/* Form card */
+.update-batch-form-container {
+  width: 430px;
+  margin: -5rem auto 0 auto;
+  padding: 28px 32px;
+  background: #f8fcfd;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 150, 199, 0.15);
+  box-shadow: 0 8px 22px rgba(31, 78, 121, 0.10);
+  box-sizing: border-box;
+}
+
+/* Title */
+.update-batch-title {
+  text-align: center;
+  color: #123A56;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 22px 0;
+}
+
+/* Labels */
+.update-batch-form-container label {
+  color: #123A56;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+/* Inputs and select boxes */
+.update-batch-form-container .form-control {
+  height: 40px;
+  border: 1px solid #c8dce3;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #123A56;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 12px;
+  box-shadow: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Input focus */
+.update-batch-form-container .form-control:focus {
+  border-color: #009CBD;
+  box-shadow: 0 0 0 3px rgba(0, 156, 189, 0.12);
+  outline: none;
+}
+
+/* Placeholder */
+.update-batch-form-container .form-control::placeholder {
+  color: #8a9aa5;
+  font-weight: 500;
+}
+
+/* Select arrow / appearance */
+/* Professional dropdown */
+.update-batch-form-container select.form-control {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-color: #ffffff;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, #123A56 50%),
+    linear-gradient(135deg, #123A56 50%, transparent 50%);
+  background-position:
+    calc(100% - 17px) 17px,
+    calc(100% - 11px) 17px;
+  background-size:
+    6px 6px,
+    6px 6px;
+  background-repeat: no-repeat;
+
+  padding-right: 40px;
+}
+
+/* Dropdown focus */
+.update-batch-form-container select.form-control:focus {
+  background-image:
+    linear-gradient(45deg, transparent 50%, #009CBD 50%),
+    linear-gradient(135deg, #009CBD 50%, transparent 50%);
+  background-position:
+    calc(100% - 17px) 17px,
+    calc(100% - 11px) 17px;
+  background-size:
+    6px 6px,
+    6px 6px;
+  background-repeat: no-repeat;
+}
+
+/* Form spacing */
+.update-batch-form-container .form-group {
+  margin-bottom: 18px;
+}
+
+/* Button row */
+.button-row {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+/* Update Batch - 60% */
+.update-button {
+  flex: 6;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background: #123A56;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(18, 58, 86, 0.20);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+/* Update hover */
+.update-button:hover:not(:disabled) {
+  background: #164B6D;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(18, 58, 86, 0.28);
+}
+
+/* Disabled Update button */
+.update-button:disabled {
+  background: #aab8c0;
+  color: #ffffff;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Back - 40% */
+.back-button {
+  flex: 4;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background: #6c757d;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+/* Back hover */
+.back-button:hover {
+  background: #5a6268;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(90, 98, 104, 0.22);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .update-batch-form-container {
+    width: calc(100% - 30px);
+    margin: -2rem auto 0 auto;
+    padding: 24px 20px;
+  }
+
+  .button-row {
+    gap: 10px;
+  }
+}

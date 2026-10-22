@@ -1,0 +1,88 @@
+:host {
+  display: block;
+  min-height: 100%;
+}
+
+/* Profile page background */
+.main-div {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  background-color: #dff4f5 !important;
+  box-sizing: border-box;
+}
+
+/* Profile card container */
+.box-div {
+  background-color: #f8fcfd;
+  border: 1px solid rgba(0, 150, 199, 0.15);
+  border-radius: 15px;
+  box-shadow: 0 8px 22px rgba(31, 78, 121, 0.10);
+  overflow: hidden;
+}
+
+/* Profile picture */
+.box-div img {
+  width: 163px;
+  height: 205px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Profile information */
+.box-div h3 {
+  margin: 0;
+  color: #123A56;
+  font-size: 16px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.box-div h3 p {
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Profile action buttons */
+.box-div .btn {
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 8px 14px;
+}
+
+/* Logout */
+.box-div .btn-primary {
+  background: linear-gradient(135deg, #009CBD, #00B1AD);
+  border: none;
+}
+
+/* Back */
+.box-div .btn-outline-primary {
+  color: #123A56;
+  border-color: #009CBD;
+}
+
+.box-div .btn-outline-primary:hover {
+  color: #ffffff;
+  background-color: #009CBD;
+}
+
+/* Responsive layout */
+@media (max-width: 576px) {
+  .box-div .d-flex.text-black {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .box-div img {
+    display: block;
+    width: 120px;
+    height: 140px;
+    margin: 0 auto;
+  }
+
+  .box-div h3 p {
+    font-size: 14px;
+  }
+}

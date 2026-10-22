@@ -1,0 +1,185 @@
+:host {
+  display: block;
+  box-sizing: border-box;
+}
+
+/* Main form */
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  padding: 30px;
+  background-color: rgba(240, 240, 240, 1);
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+/* Form heading */
+.example-form h1 {
+  color: rgb(17, 17, 18);
+  text-align: center;
+  font-weight: 600;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Form container */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(220, 220, 220, 1);
+  height: 89%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Form fields */
+.example-full-width {
+  width: 100%;
+}
+
+.example-form mat-form-field {
+  width: 100%;
+}
+
+/* Tables */
+.example-form table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.example-form td {
+  width: 50%;
+  padding-right: 8px;
+  vertical-align: top;
+}
+
+.example-form td:last-child {
+  padding-right: 0;
+}
+
+/* Subject select */
+.example-form > mat-form-field {
+  width: 100%;
+  margin-top: 3px;
+}
+
+/* Labels, input text, select and radio buttons */
+.example-form mat-label,
+.example-form input,
+.example-form mat-select,
+.example-form mat-radio-button {
+  color: #123A56;
+  font-weight: 500;
+}
+
+/* Placeholder */
+.example-form input::placeholder {
+  color: #7b8b98;
+  font-weight: 500;
+}
+
+/* Gender */
+.example-form mat-radio-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 2px 0 5px;
+  flex-wrap: wrap;
+}
+
+/* Validation messages */
+.example-form mat-error {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* Buttons container */
+.flex-center {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Add / Update button */
+.flex-center button[color="primary"] {
+  min-width: 120px;
+  height: 38px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3f51b5;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease;
+}
+
+.flex-center button[color="primary"]:hover {
+  background-color: #303f9f;
+}
+
+/* Close button */
+.flex-center button[color="warn"] {
+  min-width: 100px;
+  height: 38px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f44336;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease;
+}
+
+.flex-center button[color="warn"]:hover {
+  background-color: #d32f2f;
+}
+
+/* Tablet layout */
+@media (max-width: 800px) {
+  .form-container {
+    padding: 20px 10px;
+  }
+
+  .example-form {
+    width: 94%;
+    padding: 25px 22px;
+  }
+
+  .example-form td {
+    display: block;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .example-form tr {
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 500px) {
+  .example-form {
+    width: 96%;
+    padding: 20px 16px;
+  }
+
+  .flex-center {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .flex-center button[color="primary"],
+  .flex-center button[color="warn"] {
+    width: 100%;
+  }
+}

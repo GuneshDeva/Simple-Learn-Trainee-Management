@@ -1,0 +1,71 @@
+
+<div class="course-page">
+
+  <h2 class="course-title">Courses</h2>
+  <div class="course-actions">
+
+    <button
+      type="button"
+      class="course-action-button"
+      routerLink="/batchhome/addcourses">
+      Add Course
+    </button>
+
+    <button
+      type="button"
+      class="course-action-button"
+      routerLink="/batchhome/viewsubjects">
+      View Course
+    </button>
+
+  </div>
+
+  <div class="course-table-container">
+  <table class="table course-table">
+
+    <thead>
+      <tr>
+        <th scope="col">Course Name</th>
+        <th scope="col">Course Fee</th>
+        <th scope="col">Course Duration</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+
+    <tbody *ngFor="let course of courses">
+
+      <tr>
+        <td scope="row">{{ course.course_name }}</td>
+
+        <td>
+          {{ course.course_fee }}
+        </td>
+
+        <td>
+          {{ course.course_duration }}
+        </td>
+
+        <td>
+
+          <button
+            class="edit-button"
+            routerLink="/batchhome/updatecourse/{{course.course_id}}/">
+            Edit
+          </button>
+
+          <button
+            class="delete-button"
+            (click)="deleteCourse(course.course_id!)">
+            Delete
+          </button>
+
+        </td>
+      </tr>
+
+    </tbody>
+
+  </table>
+</div>
+</div>
+
+<app-sidenav></app-sidenav>

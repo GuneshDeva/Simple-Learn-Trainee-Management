@@ -1,0 +1,427 @@
+/* =========================================================
+   ADD BRANCH - ONE CONSISTENT BACKGROUND
+   ========================================================= */
+
+:host {
+  display: block;
+
+  min-height: 100vh;
+
+  background: #dff4f5 !important;
+
+  box-sizing: border-box;
+
+  padding-top: 1px;
+}
+
+
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
+
+.card {
+  max-width: 35rem;
+  max-height: 100%;
+
+  margin-left: 35rem;
+  margin-top: 5rem;
+
+  background: #dff4f5 !important;
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(0, 143, 196, 0.22);
+
+  box-shadow:
+    0 12px 30px rgba(31, 78, 121, 0.15);
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ANGULAR MATERIAL CARD
+   ========================================================= */
+
+:host ::ng-deep .card.mat-mdc-card,
+:host ::ng-deep .card.mat-card {
+  background: #dff4f5 !important;
+
+  color: #17324d !important;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.card mat-card-content,
+.card .mat-mdc-card-content {
+  width: 100%;
+
+  padding: 20px 30px !important;
+
+  margin: 0;
+
+  background: #dff4f5 !important;
+
+  color: #5f7182;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.card form {
+  width: 100%;
+
+  margin: 0;
+
+  padding: 0;
+
+  background: #dff4f5 !important;
+}
+
+
+/* =========================================================
+   FORM CONTAINERS
+   ========================================================= */
+
+.card .form-group,
+.card .row,
+.card .col,
+.card .col-75 {
+  background: transparent !important;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.branch-title {
+  text-align: center;
+
+  margin: 0 0 22px 0;
+
+  color: #17324d;
+
+  font-size: 21px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   ROW
+   ========================================================= */
+
+.card .row {
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+
+  margin-left: 0;
+
+  margin-right: 0;
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.labelname {
+  margin-top: 0.6rem;
+
+  color: #17324d;
+
+  font-weight: 600;
+
+  font-size: 14px;
+
+  white-space: nowrap;
+}
+
+
+.labelname label {
+  color: #17324d;
+
+  font-weight: 600;
+
+  font-size: 14px;
+
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.card input.form-control {
+  height: 40px;
+
+  border-radius: 8px;
+
+  border: 1px solid rgba(0, 143, 196, 0.25);
+
+  background: #ffffff !important;
+
+  color: #17324d;
+
+  font-size: 14px;
+
+  padding: 8px 12px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 2px 7px rgba(31, 78, 121, 0.07);
+}
+
+
+.card input.form-control:focus {
+  outline: none;
+
+  border-color: #008fc4;
+
+  box-shadow:
+    0 0 0 3px rgba(0, 143, 196, 0.12);
+}
+
+
+/* =========================================================
+   LOCATION SELECT
+   ========================================================= */
+
+.card mat-select {
+  display: flex;
+
+  align-items: center;
+
+  min-height: 40px;
+
+  padding: 0 10px;
+
+  border-radius: 8px;
+
+  color: #17324d;
+
+  background: #ffffff !important;
+
+  border: 1px solid rgba(0, 143, 196, 0.25);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BUTTON ROW
+   ========================================================= */
+
+.button-row {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 12px;
+
+  width: 100%;
+
+  margin-top: 24px;
+
+  background: transparent !important;
+
+  flex-wrap: nowrap;
+}
+
+
+/* =========================================================
+   ALL BUTTONS
+   ========================================================= */
+
+.button-row button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 105px;
+
+  height: 40px;
+
+  margin: 0 !important;
+
+  padding: 0 18px;
+
+  border: none;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   CREATE BRANCH
+   ========================================================= */
+
+.button-row .submit {
+  color: #ffffff !important;
+
+  background: linear-gradient(
+    135deg,
+    #008fc4,
+    #00b8a9
+  ) !important;
+
+  box-shadow:
+    0 5px 12px rgba(0, 150, 199, 0.22);
+}
+
+
+.button-row .submit:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(0, 150, 199, 0.30);
+}
+
+
+/* =========================================================
+   CLEAR
+   ========================================================= */
+
+.button-row button.btn-warning {
+  color: #ffffff !important;
+
+  background: linear-gradient(
+    135deg,
+    #00b8a9,
+    #008fc4
+  ) !important;
+
+  box-shadow:
+    0 5px 12px rgba(0, 150, 199, 0.20);
+}
+
+
+.button-row button.btn-warning:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(0, 150, 199, 0.28);
+}
+
+
+/* =========================================================
+   GO BACK
+   ========================================================= */
+
+.button-row #button {
+  color: #ffffff !important;
+
+  background: linear-gradient(
+    135deg,
+    #607d8b,
+    #455a64
+  ) !important;
+
+  box-shadow:
+    0 5px 12px rgba(69, 90, 100, 0.18);
+}
+
+
+.button-row #button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 16px rgba(69, 90, 100, 0.25);
+}
+
+
+/* =========================================================
+   REMOVE OLD POSITIONING
+   ========================================================= */
+
+.text-center {
+  margin-left: 0 !important;
+}
+
+.clear {
+  margin: 0 !important;
+}
+
+#button {
+  margin: 0 !important;
+}
+
+
+/* =========================================================
+   INVALID MESSAGE
+   ========================================================= */
+
+.invalid-feedback {
+  font-size: 12px;
+
+  color: #d9534f;
+
+  margin-top: 4px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .card {
+    margin-left: 5rem;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .card {
+    margin-left: 1rem;
+
+    width: auto !important;
+  }
+
+  .button-row {
+    flex-wrap: wrap;
+  }
+
+}
+
+.card {
+  position: relative;
+  left: -120px;
+  top: -60px;
+}

@@ -1,0 +1,121 @@
+     <div class="batch-page">
+
+  <h2 class="batch-title">View Batches</h2>
+
+  <div class="batch-actions">
+    <button
+      type="button"
+      class="batch-action-button"
+      routerLink="/batchhome/addbatch"
+      (click)="hide()">
+      Add Batch
+    </button>
+  </div>
+
+  <div class="batch-table-container">
+
+    <table class="table batch-table">
+
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Batch Name</th>
+          <th scope="col">Course Name</th>
+
+          <th scope="col" *ngIf="isAdmin">Branch Name</th>
+          <th scope="col" *ngIf="isAdmin">Location</th>
+
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let batch of batches; let i = index">
+
+          <td>{{ i + 1 }}</td>
+
+          <td>{{ batch.batch_name }}</td>
+
+          <td>{{ batch.courses!.course_name }}</td>
+
+          <td *ngIf="isAdmin">
+            {{ batch.branches?.branch_name }}
+          </td>
+
+          <td *ngIf="isAdmin">
+            {{ batch.branches?.location?.city }}
+          </td>
+
+          <td>
+            <button
+              type="button"
+              class="edit-button"
+              routerLink="/batchhome/updatebatch/{{batch.batch_id}}">
+              Edit
+            </button>
+
+            <button
+              type="button"
+              class="delete-button"
+              (click)="deleteBatch(batch.batch_id!)">
+              Delete
+            </button>
+          </td>
+
+        </tr>
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+<div class="my-5" *ngIf="show" >
+    <div class="mx-auto w-25" style="max-width: 100%;">
+        <h2 class="text-center mb-3">Add Batch</h2>
+        <form [formGroup]="form" (ngSubmit)="addBatches()" >
+            <!-- Course -->
+            <div class="row">
+                <div class="col-md-12 form-group mb-3">
+                    <label for="course" class="form-label">Course</label>
+                    <select id="course" formControlName="course" class="form-control" required>
+                        <option value="" disabled selected>Select Course</option>
+                        <option *ngFor="let course of courses" [value]="course.course_id">{{ course.course_name }}</option>
+                    </select>
+                </div>
+            </div>
+
+<!-- Branch -->
+<div class="row">
+<div class="col-md-12 form-group mb-3">
+<label for="branch" class="form-label">Branch</label>
+<select id="branch" formControlName="branch" class="form-control" required>
+  <option value="" disabled selected>Select Branch</option>
+  <option *ngFor="let branch of branches" [value]="branch.branch_id">{{ branch.branch_name }}</option>
+</select>
+</div>
+</div>
+
+
+            <!-- Batch Name -->
+            <div class="row">
+                <div class="col-md-12 form-group mb-3">
+                    <label for="batchName" class="form-label">Batch Name</label>
+                    <input id="batchName" formControlName="batch_name" type="text" name="batchName" class="form-control" placeholder="Batch Name" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <button class="btn btn-secondary w-100" type="button" (click)="goBack()">Back</button>
+                </div>
+                <div class="col-md-6 form-group">
+                    <input [disabled]="!form.valid" class="btn btn-primary w-100" type="submit" value="Add Batch">
+                </div>
+            </div>
+            <!-- (click)="goBack()" -->
+        </form>
+    </div>
+</div>
+<app-sidenav></app-sidenav>

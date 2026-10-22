@@ -1,0 +1,275 @@
+<div class="form-container">
+  <form
+    class="example-form"
+    [formGroup]="trainerForm"
+    (ngSubmit)="submitTrainer()" >
+    <!-- <h1>Trainer Registration Form</h1> -->
+    <table>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+  <mat-label>Name</mat-label>
+  <input matInput formControlName="trainer_name" placeholder="Enter Your Name"/>
+
+  <mat-error *ngIf="trainerForm.get('trainer_name')?.hasError('required')">
+    Please enter trainer name
+  </mat-error>
+  <mat-error *ngIf="trainerForm.get('trainer_name')?.hasError('minlength')">
+    Name must contain at least 2 characters
+  </mat-error>
+
+  <mat-error *ngIf="trainerForm.get('trainer_name')?.hasError('pattern')">
+    Name can contain only letters and spaces
+  </mat-error>
+</mat-form-field>
+
+
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+  <mat-label>Age</mat-label>
+
+  <input
+    matInput
+    type="number"
+    formControlName="trainer_age"
+    placeholder="Enter Your Age"
+  />
+
+  <mat-error *ngIf="trainerForm.get('trainer_age')?.hasError('required')">
+    Please enter trainer age
+  </mat-error>
+
+  <mat-error *ngIf="trainerForm.get('trainer_age')?.hasError('min')">
+    Age must be at least 18
+  </mat-error>
+
+  <mat-error *ngIf="trainerForm.get('trainer_age')?.hasError('max')">
+    Age cannot be more than 100
+  </mat-error>
+</mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+  <mat-label>Mobile Number</mat-label>
+
+  <input
+    matInput
+    type="tel"
+    formControlName="trainer_phonenumber"
+    placeholder="Enter Your Phone Number"
+  />
+
+  <mat-error
+    *ngIf="trainerForm.get('trainer_phonenumber')?.hasError('required')"
+  >
+    Please enter phone number
+  </mat-error>
+
+  <mat-error
+    *ngIf="trainerForm.get('trainer_phonenumber')?.hasError('pattern')"
+  >
+    Please enter a valid 10-digit phone number
+  </mat-error>
+</mat-form-field>
+
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+  <mat-label>Email</mat-label>
+
+  <input
+    matInput
+    type="email"
+    formControlName="trainer_email"
+    placeholder="Enter Your Email"
+  />
+
+  <mat-error
+    *ngIf="trainerForm.get('trainer_email')?.hasError('required')"
+  >
+    Please enter email address
+  </mat-error>
+
+  <mat-error
+    *ngIf="trainerForm.get('trainer_email')?.hasError('pattern')"
+  >
+    Please enter a valid email address
+  </mat-error>
+</mat-form-field>
+
+
+        </td>
+      </tr>
+    </table>
+
+   <table class="example-full-width" cellspacing="0">
+  <tr>
+    <mat-radio-group
+      aria-label="Select an option"
+      class="example-full-width"
+      formControlName="trainer_gender"
+    >
+      <td>
+        <mat-label>Gender</mat-label>
+
+        <mat-radio-button value="Male">
+          Male
+        </mat-radio-button>
+
+        <mat-radio-button value="Female">
+          Female
+        </mat-radio-button>
+
+        <mat-error
+          *ngIf="trainerForm.get('trainer_gender')?.hasError('required')"
+        >
+          Please select gender
+        </mat-error>
+      </td>
+    </mat-radio-group>
+  </tr>
+</table>
+
+    <table formGroupName="address">
+      <tr>
+        <td>
+         <mat-form-field class="example-full-width">
+  <mat-label>Door Number</mat-label>
+
+  <input
+    matInput
+    formControlName="door_no"
+    placeholder="Door No."
+  />
+
+  <mat-error *ngIf="trainerForm.get('address.door_no')?.hasError('required')">
+    Please enter door number
+  </mat-error>
+</mat-form-field>
+
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+  <mat-label>Street</mat-label>
+
+  <input
+    matInput
+    formControlName="street"
+    placeholder="Street Name"
+  />
+
+  <mat-error *ngIf="trainerForm.get('address.street')?.hasError('required')">
+    Please enter street name
+  </mat-error>
+</mat-form-field>
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+  <mat-label>City</mat-label>
+
+  <input
+    matInput
+    formControlName="city"
+    placeholder="Enter City"
+  />
+
+  <mat-error *ngIf="trainerForm.get('address.city')?.hasError('required')">
+    Please enter city
+  </mat-error>
+</mat-form-field>
+
+        </td>
+        <td>
+         <mat-form-field class="example-full-width">
+  <mat-label>State</mat-label>
+
+  <input
+    matInput
+    formControlName="state"
+    placeholder="Enter State"
+  />
+
+  <mat-error *ngIf="trainerForm.get('address.state')?.hasError('required')">
+    Please enter state
+  </mat-error>
+</mat-form-field>
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+  <mat-label>Pincode</mat-label>
+
+  <input
+    matInput
+    type="text"
+    formControlName="pincode"
+    placeholder="Enter 6-digit pincode"
+  />
+
+  <mat-error *ngIf="trainerForm.get('address.pincode')?.hasError('required')">
+    Please enter pincode
+  </mat-error>
+
+  <mat-error *ngIf="trainerForm.get('address.pincode')?.hasError('pattern')">
+    Please enter a valid 6-digit pincode
+  </mat-error>
+</mat-form-field>
+
+        </td>
+        <td>
+         <mat-form-field class="example-full-width">
+  <mat-label>Locality</mat-label>
+
+  <input
+    matInput
+    formControlName="locality"
+    placeholder="Enter Locality"
+  />
+
+  <mat-error *ngIf="trainerForm.get('address.locality')?.hasError('required')">
+    Please enter locality
+  </mat-error>
+</mat-form-field>
+
+        </td>
+      </tr>
+    </table>
+    <!-- Form controls for interviewer information -->
+
+    <mat-form-field>
+  <mat-label>Select Subject</mat-label>
+
+  <mat-select multiple formControlName="subjects">
+
+    <mat-option
+      *ngFor="let subject of subjects; let i = index"
+      [value]="subject.subject_Id"
+    >
+      {{ subject.subject_name }}
+    </mat-option>
+
+  </mat-select>
+
+  <mat-error *ngIf="trainerForm.get('subjects')?.hasError('required')">
+    Please select at least one subject
+  </mat-error>
+</mat-form-field>
+
+    <div class="flex-center">
+      <button mat-raised-button type="submit" color="primary">
+        {{ submitType }}
+      </button>
+      <button mat-raised-button type="button" color="warn" (click)= "closeDialog()">
+        Close
+      </button>
+    </div>
+  </form>
+</div>

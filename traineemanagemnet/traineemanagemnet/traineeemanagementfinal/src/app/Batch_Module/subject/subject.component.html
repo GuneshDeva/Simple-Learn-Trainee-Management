@@ -1,0 +1,373 @@
+<div class="subjects-page">
+
+  <!-- =========================
+       PAGE TITLE
+  ========================== -->
+  <h2 class="subjects-title">Subjects</h2>
+
+
+  <!-- =========================
+       TOP ACTION BUTTONS
+  ========================== -->
+  <div class="subjects-actions">
+
+    <button
+      type="button"
+      class="subject-action-button"
+      (click)="top()">
+      Add Topic
+    </button>
+
+    <button
+      type="button"
+      class="subject-action-button"
+      (click)="hide()">
+      Add Subject
+    </button>
+
+  </div>
+
+
+  <!-- =========================
+       ADD SUBJECT FORM
+  ========================== -->
+  <div
+    class="blur-background"
+    [hidden]="!show">
+
+    <div class="subject-form-container">
+
+      <mat-card class="subject-form-card">
+
+        <mat-card-title class="form-title">
+          Add Subject
+        </mat-card-title>
+
+        <mat-card-content class="form-content">
+
+          <form
+            [formGroup]="loginForm"
+            (ngSubmit)="saveSubject()">
+
+            <mat-form-field
+              appearance="outline"
+              class="field">
+
+              <mat-label>Subject</mat-label>
+
+              <input
+                matInput
+                type="text"
+                formControlName="subject_name"
+                required>
+
+            </mat-form-field>
+
+
+            <!-- BUTTONS -->
+            <div class="form-buttons">
+
+              <button
+                type="submit"
+                class="save-button">
+                Save
+              </button>
+
+              <button
+                type="button"
+                class="cancel-button"
+                (click)="hide()">
+                Cancel
+              </button>
+
+            </div>
+
+          </form>
+
+        </mat-card-content>
+
+      </mat-card>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       SUBJECT TABLE
+  ========================== -->
+  <div class="subject-table-container">
+
+    <table class="table subject-table">
+
+      <thead>
+
+        <tr>
+          <th>S.No</th>
+          <th>Subject</th>
+          <th>Trainer</th>
+          <th>Topics</th>
+          <th>Action</th>
+        </tr>
+
+      </thead>
+
+
+      <tbody>
+
+        <ng-container
+          *ngFor="let subject of subjects; let i = index">
+
+          <!-- SUBJECT ROW -->
+          <tr>
+
+            <td>
+              {{ i + 1 }}
+            </td>
+
+            <td>
+              {{ subject.subject_name }}
+            </td>
+
+            <td>
+
+              <ul *ngIf="subject.trainer">
+
+                <li
+                  *ngFor="let trainer of subject.trainer">
+
+                  {{ trainer.trainer_name }}
+
+                </li>
+
+              </ul>
+
+            </td>
+
+
+            <!-- VIEW TOPICS -->
+            <td>
+
+              <button
+                type="button"
+                class="icon-button view-icon"
+                (click)="view(subject.subject_Id)"
+                title="View Topics">
+
+                <i
+                  class="fa fa-eye"
+                  aria-hidden="true">
+                </i>
+
+              </button>
+
+            </td>
+
+
+            <!-- DELETE SUBJECT -->
+            <td>
+
+              <button
+                type="button"
+                class="icon-button delete-icon"
+                (click)="delete(subject.subject_Id)"
+                title="Delete Subject">
+
+                <i
+                  class="fa fa-trash"
+                  aria-hidden="true">
+                </i>
+
+              </button>
+
+            </td>
+
+          </tr>
+
+
+          <!-- =========================
+               TOPICS FOR SELECTED SUBJECT
+          ========================== -->
+          <tr
+            *ngIf="selectedSubjectId === subject.subject_Id">
+
+            <td colspan="5">
+
+              <table class="topic-table">
+
+                <thead>
+
+                  <tr>
+                    <th>S.No</th>
+                    <th>Topic Name</th>
+                  </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                  <tr
+                    *ngFor="
+                      let topic of getTopic(subject.subject_Id);
+                      let j = index">
+
+                    <td>
+                      {{ j + 1 }}
+                    </td>
+
+                    <td>
+                      {{ topic.topic_name }}
+                    </td>
+
+                  </tr>
+
+                </tbody>
+
+              </table>
+
+            </td>
+
+          </tr>
+
+        </ng-container>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+  <!-- =========================
+       ADD TOPIC FORM
+  ========================== -->
+
+  <!--
+       IMPORTANT:
+       *ngIf completely removes the modal
+       when cl becomes true.
+  -->
+  <div
+    class="topic-modal"
+    *ngIf="!cl">
+
+    <div class="topic-form-container">
+
+      <mat-card class="subject-form-card">
+
+        <mat-card-title class="form-title">
+          Add Topic
+        </mat-card-title>
+
+
+        <mat-card-content class="form-content">
+
+          <form
+            [formGroup]="topicForm"
+            (ngSubmit)="saveTopic()">
+
+
+            <!-- =========================
+                 TOPIC NAME
+            ========================== -->
+            <mat-form-field
+              appearance="outline"
+              class="field">
+
+              <mat-label>Topic</mat-label>
+
+              <input
+                matInput
+                type="text"
+                formControlName="topic_name"
+                required>
+
+            </mat-form-field>
+
+
+            <!-- =========================
+                 SUBJECT
+            ========================== -->
+            <mat-form-field
+              appearance="outline"
+              class="field">
+
+              <mat-label>Subject</mat-label>
+
+              <mat-select
+                formControlName="subject_Id"
+                (selectionChange)="onTrainerSelection($event)">
+
+                <mat-option
+                  *ngFor="let subject of subjects"
+                  [value]="subject.subject_Id">
+
+                  {{ subject.subject_name }}
+
+                </mat-option>
+
+              </mat-select>
+
+            </mat-form-field>
+
+
+            <!-- =========================
+                 BUTTONS
+            ========================== -->
+            <div class="form-buttons">
+
+              <button
+                type="submit"
+                class="save-button">
+                Save
+              </button>
+
+              <button
+                type="button"
+                class="cancel-button"
+                (click)="top()">
+                Cancel
+              </button>
+
+            </div>
+
+          </form>
+
+        </mat-card-content>
+
+      </mat-card>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       LOADING
+  ========================== -->
+  <div *ngIf="isLoading">
+
+    <div class="center-body">
+
+      <div class="blur-backgrounds">
+
+        <div class="loader-circle-11">
+
+          <div class="arc"></div>
+          <div class="arc"></div>
+          <div class="arc"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- SIDEBAR -->
+<app-sidenav></app-sidenav>
