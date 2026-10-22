@@ -18,7 +18,7 @@ import { Trainee } from 'src/app/model/trainee';
 })
 export class TrainerComponent implements OnInit, AfterViewInit {
   trainers!: Trainer[];
-  allTrainers: Trainer[] = [];                              /**This line added newly  -01.10.2026  */
+  allTrainers: Trainer[] = [];
   selectedSubject!: string;
   public subjects: Subjects[] = [];
   displayedColumns: string[] = [
@@ -36,22 +36,7 @@ export class TrainerComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  // constructor(
-  //   private courseRepository: CourseRepository,
-  //   private dialog: MatDialog,
-  //   private restData: RestDataSource
-  // ) {
-  //   this.dataSource = new MatTableDataSource();
-  //   this.restData.getTrainers().subscribe({
-  //     next: (resp) => {
-  //       console.log(resp);
-  //       this.trainers = resp;
-  //       this.dataSource.data = resp;
-  //     },
-  //   });
-  // }
 
-  // The above constructor is old the new one is added below   -29.09.2026
   constructor(
   private courseRepository: CourseRepository,
   private dialog: MatDialog,
@@ -67,18 +52,7 @@ export class TrainerComponent implements OnInit, AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  // ngOnInit(): void {
-  //   this.getSubject();
-  //   this.getTrainers();
-  //   this.restData.trainerDataUpdated.subscribe(() => {
-  //     this.refreshTrainers();
-  //   });
-  //   this.trainers = this.courseRepository.getTrainers();
-  //   this.getTrainers();
-  // }
 
-
-  // The above ngOnInIt() is old and the new one is added below and also getTrainersFromBackend()    -29.09.2026
 ngOnInit(): void {
   this.getSubject();
   this.getTrainersFromBackend();
@@ -103,17 +77,7 @@ getTrainersFromBackend(): void {
   });
 }
 
-//   refreshTrainers(): void {
-//   this.restData.getTrainers().subscribe({
-//     next: (resp) => {
-//       this.trainers = resp;
-//       this.dataSource.data = resp;
-//     },
-//     error: (error) => {
-//       console.error('Error refreshing trainers:', error);
-//     }
-//   });
-// }
+
 
 
 refreshTrainers() {
@@ -155,12 +119,7 @@ refreshTrainers() {
     return this.courseRepository.getTrainers();
   }
 
-  // addTrainer() {
-  //   this.dialog.open(TrainerFormComponent);
-  //   this.getTrainers();
-  // }
 
-// The above addTrainer() is old and the new one is added below   -29.09.2026
 
   addTrainer() {
   const dialogRef = this.dialog.open(
@@ -177,11 +136,6 @@ refreshTrainers() {
   });
 }
 
-  // deleteTrainer(trainer: Trainer) {
-  //   console.log('inside delete skill :' + trainer.trainer_id);
-  //   this.courseRepository.deleteTrainerById(trainer.trainer_id as number);
-  //   this.getTrainers();
-  // }
   deleteTrainer(trainer: Trainer) {
     if (typeof trainer.trainer_Id === 'number') {
       this.restData.deleteTrainerById(trainer.trainer_Id).subscribe(
@@ -213,15 +167,6 @@ refreshTrainers() {
     }
   }
 
-  // editTrainer(trainer: Trainer) {
-  //   console.log(trainer);
-  //   this.dialog.open(TrainerFormComponent, {
-  //     data: trainer,
-  //   });
-  //   this.getTrainers();
-  // }
-
-  // The above editTrainer() is old and the new one is added below   -29.09.2026
 
 editTrainer(trainer: Trainer) {
   console.log(trainer);
@@ -241,77 +186,6 @@ editTrainer(trainer: Trainer) {
   });
 }
 
-  // filterTrainersBySubject() {
-  //   this.trainers = this.courseRepository
-  //     .getSubjects()
-  //     .filter((subject) =>
-  //       subject.subject_name.includes(this.selectedSubject)
-  //     )[0]?.trainer;
-  //   console.log(this.trainers);
-  //   console.log(this.courseRepository.getSubjects());
-
-  //   let ids: any = this.trainers?.map((trainer) => trainer.trainer_id);
-  //   console.log(ids);
-  //   this.trainers = this.courseRepository
-  //     .getTrainers()
-  //     .filter((trainer1) => ids.indexOf(trainer1.trainer_id) != -1);
-  //   console.log(this.trainers);
-  //   this.dataSource = new MatTableDataSource(this.trainers);
-  //   return this.trainers;
-  // }
-  // filterTrainersBySubject() {
-  //   if (!this.selectedSubject) {
-  //     // If no subject is selected, display all trainers
-  //     this.dataSource.data = this.trainers;
-  //   } else {
-  //     // Filter trainers based on the selected subject
-  //     const filteredTrainers = this.trainers.filter((trainer) =>
-  //       trainer.subjects?.some(
-  //         (subject) => subject.subject_name === this.selectedSubject
-  //       )
-  //     );
-  //     this.dataSource.data = filteredTrainers;
-  //   }
-  // }
-  // filterTraineeByBatch() {
-  //   let trainerIds = this.courseRepository
-  //     .getBatches()
-  //     .filter((batch) =>
-  //       batch.batch_name.includes(this.selectedBatch)
-  //     )[0]?.trainees_ids;
-  //   console.log(trainerIds);
-  //   this.trainees = this.courseRepository.getTrainees().filter((trainee) => {
-  //     return trainerIds.indexOf(trainee.trainee_id) != -1;
-  //     console.log(trainee.trainee_id + ':' + trainerIds);
-  //   });
-  //   this.dataSource = new MatTableDataSource(this.trainees);
-  //   console.log(this.trainees);
-  // }
-
-
-  // filterTrainersBySubject() {
-  //   this.trainers = this.courseRepository
-  //     .getSubjects()
-  //     .filter((subject) =>
-  //       subject.subject_name.includes(this.selectedSubject)
-  //     )[0]?.trainer;
-  //   console.log(this.trainers);
-  //   console.log(this.courseRepository.getSubjects());
-
-  //   let ids: any = this.trainers?.map((trainer) => trainer.trainer_Id) || []; // Add a nullish coalescing operator to handle undefined this.trainers
-  //   console.log(ids);
-
-  //   if (Array.isArray(this.trainers)) {
-  //     // Check if this.trainers is an array before filtering
-  //     this.trainers = this.courseRepository
-  //       .getTrainers()
-  //       .filter((trainer1) => ids.indexOf(trainer1.trainer_Id) !== -1);
-  //     console.log(this.trainers);
-  //     this.dataSource = new MatTableDataSource(this.trainers);
-  //   }
-
-  //   return this.trainers;
-  // }
 
 
 filterTrainersBySubject() {

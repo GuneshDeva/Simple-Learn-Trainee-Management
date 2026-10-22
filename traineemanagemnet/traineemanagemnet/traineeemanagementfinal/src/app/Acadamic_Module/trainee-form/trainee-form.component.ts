@@ -24,10 +24,7 @@ export class TraineeFormComponent implements OnInit {
     private restdatasource: RestDataSource,
     @Inject(MAT_DIALOG_DATA) private traineeData: any
   ) {
-    //  this.restdatasource.traineeDataUpdated.subscribe(() => {
-    //    // This will be triggered whenever trainee data is updated
-    //    this.refreshTrainees();
-    //  });
+
   }
 
   ngOnInit() {
@@ -77,72 +74,11 @@ export class TraineeFormComponent implements OnInit {
     }
   }
 
-  // submitTrainee(): void {
-  //   // if (this.traineeForm.invalid) {
-  //   //   return;
-  //   // }
-  //   if(this.traineeData){
-  //     console.log(this.traineeData.batch_id)
-  //     this.courseRepo.updateTraineeById(this.traineeData.trainee_id,this.traineeForm.value);
-  //   }
-  //   else{
-  //     this.courseRepo.saveTrainee(this.traineeForm.value);
-  //  }
-  //   // this.courseRepo.saveTrainee(this.traineeForm.value);
-  //   this.dialogRef.close();
-  //   this.traineeForm.reset();
-  //   this.route.navigateByUrl('/trainees')
-  // }
-
-  // submitTrainee(): void {
-  //   if (this.traineeForm.valid) {
-  //     const formData = this.traineeForm.value;
-  //     if (this.traineeData) {
-  //       this.restdatasource
-  //         .updateTrainee(this.traineeData.trainee_id, formData)
-  //         .subscribe(() => {
-  //           console.log(formData); // Log the updated trainer data
-  //           this.dialogRef.close();
-  //           this.resetForm();
-  //           // Emit an event to notify the TrainerComponent that data has changed
-  //           this.restdatasource.emitTraineeDataUpdated();
-  //         });
-  //       console.log(this.traineeData);
-  //     } else {
-  //       this.restdatasource.saveTrainee(formData).subscribe(() => {
-  //         console.log(formData); // Log the newly added trainer data
-  //         this.dialogRef.close();
-  //         this.resetForm();
-  //         // Emit an event to notify the TrainerComponent that data has changed
-  //         this.restdatasource.emitTraineeDataUpdated();
-  //       });
-  //     }
-  //   }
-  // }
 
 
   getBatches() {
     return this.courseRepo.getBatches();
   }
-  // submitTrainee(): void {
-  //   // if (this.traineeForm.invalid) {
-  //   //   return;
-  //   // }
-  //   if (this.traineeData) {
-  //     console.log(this.traineeData.batch_id);
-  //     this.courseRepo.updateTraineeById(
-  //       this.traineeData.trainee_id,
-  //       this.traineeForm.value
-  //     );
-  //   } else {
-  //     console.log(this.traineeForm.value)
-  //     this.courseRepo.saveTrainee(this.traineeForm.value);
-  //   }
-  //   // this.courseRepo.saveTrainee(this.traineeForm.value);
-  //   this.dialogRef.close();
-  //   this.traineeForm.reset();
-  //   this.route.navigateByUrl('/trainees');
-  // }
 
   submitTrainee(): void {
 

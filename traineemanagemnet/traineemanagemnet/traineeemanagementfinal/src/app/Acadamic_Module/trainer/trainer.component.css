@@ -258,25 +258,6 @@
    TABLE CONTAINER
 ========================= */
 
-/* .trainer-table-container {
-  width: 65%;
-  margin-left: 23rem;
-  margin-top: -8.5rem;
-
-
-  background: #f8fcfd;
-
-  border-radius: 14px;
-
-  border: 1px solid rgba(0, 150, 199, 0.15);
-
-  box-shadow:
-    0 8px 22px rgba(31, 78, 121, 0.10);
-
-  overflow: hidden;
-
-  box-sizing: border-box;
-} */
 
 .trainer-table-container {
   position: absolute;

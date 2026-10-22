@@ -37,7 +37,7 @@ export class TrainerFormComponent implements OnInit {
       trainer_gender: ['', [Validators.required]],
       trainer_phonenumber: ['', [Validators.required,Validators.pattern(/^[0-9]{10}$/)]],
       trainer_email: ['', [Validators.required,Validators.pattern(/^[a-zA-Z0-9._%+-]+@gmail\.com$/)]],
-      address: this.formBuilder.group({                                                /**Here 'address_id' changed to 'address'   -29.09.2026*/
+      address: this.formBuilder.group({
         // address_id: ['', Validators.required],
         door_no: ['', [Validators.required]],
         street: ['', [Validators.required]],
@@ -72,17 +72,7 @@ export class TrainerFormComponent implements OnInit {
           trainer_gender: this.trainerData.trainer_gender,
           trainer_phonenumber: this.trainerData.trainer_phonenumber,
           trainer_email: this.trainerData.trainer_email,
-          address: {                                                                            /**Here 'address_id' changed to 'address'   -29.09.2026*/
-            // address_id: this.trainerData.address_id.address_id,
-// ------------old code------------------------
-            // door_no: this.trainerData.address_id.door_no,
-            // street: this.trainerData.address_id.street,
-            // city: this.trainerData.address_id.city,
-            // pincode: this.trainerData.address_id.pincode,
-            // locality: this.trainerData.address_id.locality,
-            // state: this.trainerData.address_id.state,
-
-            // --------------New code -29.09.2026------------------------
+          address: {
 
             door_no: this.trainerData.address?.door_no,
             street: this.trainerData.address?.street,
@@ -107,33 +97,7 @@ export class TrainerFormComponent implements OnInit {
   });
 }
 
-  // submitTrainer(): void {
-  //   if (this.trainerForm.valid) {
-  //     const formData = this.trainerForm.value;
-  //     if (this.trainerData) {
-  //       console.log('UPDATE DATA:', formData);
-  //       this.restdatasource
-  //         .updateTrainer(this.trainerData.trainer_Id, formData)
-  //         .subscribe(() => {
-  //           console.log(formData); // Log the updated trainer data
-  //           this.dialogRef.close();
-  //           this.resetForm();
-  //           // Emit an event to notify the TrainerComponent that data has changed
-  //           this.restdatasource.emitTrainerDataUpdated();
-  //         });
-  //     } else {
-  //       this.restdatasource.saveTrainer(formData).subscribe(() => {
-  //         console.log(formData); // Log the newly added trainer data
-  //         this.dialogRef.close();
-  //         this.resetForm();
-  //         // Emit an event to notify the TrainerComponent that data has changed
-  //         this.restdatasource.emitTrainerDataUpdated();
-  //       });
-  //     }
-  //   }
-  // }
 
-// The above 'submitTrainer()' was old and below was new, the swal is added for the new one       -29.09.2026
   submitTrainer(): void {
 
   // Check whether the form is invalid
@@ -293,7 +257,7 @@ export class TrainerFormComponent implements OnInit {
   }
 }
 
-// The below method getValidationMessages() is a helper method added newly     -01.10.2026
+
 
 getValidationMessages(): string[] {
 
@@ -402,9 +366,7 @@ getValidationMessages(): string[] {
     });
   }
 
-  // getSubjects() {
-  //   return this.courseRepo.getSubjects();
-  // }
+
   getSubject() {
     this.restdatasource.getSubjects().subscribe((data) => {
       this.subjects = data;
