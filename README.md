@@ -208,6 +208,6 @@ Open the local URL printed by the Angular development server.
 - Enforce authentication and authorization in backend endpoints.
 - Test API flows with Postman and verify the same workflows through the UI.
 
----
+----
 
 **Simple Learn | Trainee Management System**
